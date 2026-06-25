@@ -1,5 +1,5 @@
 {
-  "extends": "@org/typescript-config/react-library.json",
+  "extends": "../../react-tsconfig.base.json",
   "compilerOptions": {
     "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.lib.tsbuildinfo",
     "composite": true,

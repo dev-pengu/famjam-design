@@ -30,7 +30,7 @@
         "registry": "http://localhost:4873",
         "access": "public",
         "tag": "next",
-        "packageRoot": "{projectRoot}/dist"
+        "packageRoot": "dist/{projectRoot}"
       }
     }
   }

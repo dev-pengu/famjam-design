@@ -12,6 +12,13 @@ const entry = [
     const componentRegex = new RegExp(`^${componentName}(?:\\.web|\\.native)?\\.tsx$`);
     return componentRegex.test(fileName);
   }),
+  ...globSync('src/hooks/**/*.ts').filter((file) => {
+    const parts = file.split('/');
+    const hookName = parts[parts.length - 2];
+    const fileName = parts[parts.length - 1];
+    const hookRegex = new RegExp(`^${hookName}(?:\\.web|\\.native)?\\.ts$`);
+    return hookRegex.test(fileName);
+  }),
 ];
 
 export default defineConfig({
@@ -28,5 +35,4 @@ export default defineConfig({
     },
   },
   plugins: [cssModules()],
-  copy: ['package.json', 'README.md'],
 });

@@ -9,6 +9,7 @@ const fontFamilyRoboto = FontFamily.Roboto;
 
 const CDN_FONT_DIR_PATH = ''; // TODO
 const LOCAL_FONT_DIR_PATH = '../assets/roboto/woff2/';
+const workspaceDir = process.env.NX_WORKSPACE_ROOT || process.env.INIT_CWD;
 
 function createFontsCssContent(): string {
   const variants = [
@@ -46,7 +47,7 @@ export function fontsCssPlugin(): Rolldown.Plugin {
       }
 
       const packageRoot = dirname(fileURLToPath(import.meta.url));
-      const distDir = join(packageRoot, 'dist');
+      const distDir = join(workspaceDir!, 'dist/libs/fonts');
 
       await mkdir(distDir, { recursive: true });
       await writeFile(join(distDir, 'fonts.css'), createFontsCssContent());

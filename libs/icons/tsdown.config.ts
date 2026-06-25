@@ -13,5 +13,4 @@ export default defineConfig({
       extensions: ['.web.tsx', '.native.tsx', '.tsx', '.web.ts', '.native.ts', '.ts', '.jsx', '.js', '.json'],
     },
   },
-  copy: ['package.json', 'README.md'],
 });

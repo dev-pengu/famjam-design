@@ -2,7 +2,7 @@ import { useId, useState, useCallback, useEffect, useMemo } from 'react';
 import styles from './input.web.module.css';
 import { cx } from '../../utils/cx';
 import { InputProps, InputVariant, LabelVariant } from './input.types';
-import { Typography, TypographyBody, TypographySize } from '../typography';
+import { Typography, TypographySize } from '../typography';
 import { InputState, helperPayloadMap } from './input-base';
 import { Icon } from '../icon';
 

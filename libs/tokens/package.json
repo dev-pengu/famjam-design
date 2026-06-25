@@ -1,6 +1,6 @@
 {
   "name": "@famjam/tokens",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "type": "module",
   "main": "./dist/index.js",
   "module": "./dist/index.js",
@@ -45,12 +45,8 @@
       "default": "./dist/ui.web.js"
     }
   },
-  "files": [
-    "dist",
-    "!**/*.tsbuildinfo"
-  ],
   "scripts": {
-    "build": "node index.js",
+    "generate": "node index.js",
     "lint": "eslint --max-warnings 0",
     "check-types": "tsc --noEmit"
   },
@@ -59,7 +55,6 @@
   },
   "devDependencies": {
     "@org/eslint-config": "*",
-    "@org/typescript-config": "*",
     "eslint": "*",
     "style-dictionary": "*",
     "tsdown": "*",

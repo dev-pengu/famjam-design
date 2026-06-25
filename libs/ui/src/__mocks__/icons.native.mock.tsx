@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { View } from 'react-native';
 
 const MockIcon = (props: Record<string, unknown>) => <View {...props} />;

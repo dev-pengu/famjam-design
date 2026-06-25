@@ -4,13 +4,10 @@
   "files": [],
   "references": [
     {
-      "path": "./libs/tokens"
-    },
-    {
       "path": "./libs/icons"
     },
     {
-      "path": "./libs/ui"
+      "path": "./libs/tokens"
     }
   ]
 }

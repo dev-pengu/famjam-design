@@ -23,7 +23,7 @@ const STYLE_EXT = '.styles';
 const NATIVE_EXT = '.native';
 const TOKEN_EXT = '.tokens';
 
-const TOKENS_ROOT = '/src';
+const TOKENS_ROOT = './src';
 
 const FORMAT_FOR_WEB = 'css/variables';
 const FORMAT_FOR_WEB_JS = 'javascript/theme-css-entry';
@@ -40,15 +40,13 @@ const CSS_TRANSFORM_GROUP_WITH_NUMBER_PX = 'css-with-number-px';
 const FILTER_EXCLUDE_THEMES = 'exclude-themes';
 const FILTER_EXCLUDE_ROOT = 'exclude-root';
 
-const TOKENS_SRC = path.join(import.meta.dirname, TOKENS_ROOT);
-
 //-----------------------------------
 // FILTERS
 //-----------------------------------
 StyleDictionary.registerFilter({
   name: FILTER_EXCLUDE_ROOT,
   filter: (token) => {
-    const filePath = token.filePath.replace(TOKENS_SRC, '').replace(/\\/g, '/');
+    const filePath = token.filePath.replace(/\\/g, '/');
     return filePath.indexOf('/') !== filePath.lastIndexOf('/');
   },
 });
@@ -56,7 +54,7 @@ StyleDictionary.registerFilter({
 StyleDictionary.registerFilter({
   name: FILTER_EXCLUDE_THEMES,
   filter: (token) => {
-    const filePath = token.filePath.replace(TOKENS_SRC, '').replace(/\\/g, '/');
+    const filePath = token.filePath.replace(/\\/g, '/');
     return filePath.indexOf('/') === filePath.lastIndexOf('/');
   },
 });
@@ -242,10 +240,9 @@ function getTokenFiles(folder) {
 
 function createConfigForTheme(themeName, tokenFiles, filter) {
   const isDefault = themeName === DEFAULT_THEME || themeName === ROOT_FILE_NAME;
-  const rootFiles = getTokenFiles(TOKENS_SRC);
+  const rootFiles = getTokenFiles(TOKENS_ROOT);
   const combinedFiles = [...rootFiles, ...tokenFiles];
-  console.log(combinedFiles);
-  const buildPath = path.join(import.meta.dirname, DIST_PATH);
+  const buildPath = DIST_PATH;
 
   return {
     source: combinedFiles,
@@ -312,19 +309,19 @@ function createConfigForTheme(themeName, tokenFiles, filter) {
 const configs = [];
 
 const themeFolders = fs
-  .readdirSync(TOKENS_SRC, { withFileTypes: true })
+  .readdirSync(TOKENS_ROOT, { withFileTypes: true })
   .filter((d) => d.isDirectory())
   .map((d) => d.name);
 
 themeFolders.forEach((themeName) => {
-  const folderPath = path.join(TOKENS_SRC, themeName).replace(/\\/g, '/');
+  const folderPath = path.join(TOKENS_ROOT, themeName).replace(/\\/g, '/');
   const tokenFiles = getTokenFiles(folderPath);
   if (tokenFiles.length) {
     configs.push(createConfigForTheme(themeName, tokenFiles, FILTER_EXCLUDE_ROOT));
   }
 });
 
-const rootFiles = getTokenFiles(TOKENS_SRC);
+const rootFiles = getTokenFiles(TOKENS_ROOT);
 
 if (rootFiles.length) {
   configs.push(createConfigForTheme(ROOT_FILE_NAME, [], FILTER_EXCLUDE_THEMES));

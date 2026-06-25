@@ -1,24 +1,24 @@
 {
   "compilerOptions": {
-    "composite": true,
+    "declaration": true,
     "declarationMap": true,
-    "emitDeclarationOnly": true,
-    "importHelpers": true,
+    "esModuleInterop": true,
+    "incremental": false,
     "isolatedModules": true,
-    "lib": ["es2022"],
+    "lib": ["es2022", "DOM", "DOM.Iterable"],
     "module": "nodenext",
+    "moduleDetection": "force",
     "moduleResolution": "nodenext",
-    "noEmitOnError": true,
-    "noFallthroughCasesInSwitch": true,
-    "noImplicitOverride": true,
-    "noImplicitReturns": true,
-    "noUnusedLocals": true,
+    "noUncheckedIndexedAccess": true,
+    "resolveJsonModule": true,
     "skipLibCheck": true,
     "strict": true,
     "target": "es2022",
     "customConditions": ["@org/source"],
     "paths": {
-      "@famjam/fonts": ["./libs/fonts/src/index.ts"]
+      "@famjam/fonts": ["./libs/fonts/src/index.ts"],
+      "@famjam/tokens": ["./libs/tokens/src/index.ts"],
+      "@famjam/tokens/*": ["./libs/tokens/dist/*"]
     }
   }
 }

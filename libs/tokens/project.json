@@ -9,19 +9,22 @@
     "build": {
       "executor": "nx:run-commands",
       "outputs": ["{projectRoot}/dist"],
-      "dependsOn": ["bundle"],
+      "dependsOn": ["generate"],
       "options": {
         "parallel": false,
         "commands": [
-          "cp libs/tokens/package.json libs/tokens/dist/package.json",
-          "cp libs/tokens/README.md libs/tokens/dist/README.md"
+          "rm -rf dist/libs/tokens",
+          "mkdir dist/libs/tokens",
+          "cp -r libs/tokens/dist dist/libs/tokens",
+          "cp libs/tokens/package.json dist/libs/tokens/package.json",
+          "cp libs/tokens/README.md dist/libs/tokens/README.md"
         ]
       }
     },
-    "bundle": {
+    "generate": {
       "executor": "nx:run-script",
       "options": {
-        "script": "build"
+        "script": "generate"
       }
     },
     "nx-release-publish": {
@@ -29,7 +32,7 @@
         "registry": "http://localhost:4873",
         "access": "public",
         "tag": "next",
-        "packageRoot": "{projectRoot}/dist"
+        "packageRoot": "dist/{projectRoot}"
       }
     }
   }

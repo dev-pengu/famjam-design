@@ -10,5 +10,6 @@ export default defineConfig({
     neverBundle: ['node:fs', 'node:path', 'node:url'],
   },
   plugins: [fontsCssPlugin()],
-  copy: ['package.json', 'README.md'],
+  copy: ['package.json', 'README.md', 'assets'],
+  outDir: '../../dist/libs/fonts/',
 });

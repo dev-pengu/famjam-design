@@ -1,6 +1,6 @@
 {
   "name": "@famjam/ui",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "type": "module",
   "main": "./dist/index.cjs",
   "module": "./dist/index.js",
@@ -13,6 +13,73 @@
       "require": "./dist/index.cjs",
       "default": "./dist/index.js"
     },
+    "./use-breakpoints": {
+      "types": "./dist/hooks/use-breakpoints/use-breakpoints.web.d.ts",
+      "react-native": "./dist/hooks/use-breakpoints/use-breakpoints.native.js",
+      "import": "./dist/hooks/use-breakpoints/use-breakpoints.web.js",
+      "require": "./dist/hooks/use-breakpoints/use-breakpoints.web.cjs",
+      "default": "./dist/hooks/use-breakpoints/use-breakpoints.web.js"
+    },
+    "./box": {
+      "react-native": {
+        "types": "./dist/components/box/box.native.d.ts",
+        "default": "./dist/components/box/box.native.js"
+      },
+      "types": "./dist/components/box/box.web.d.ts",
+      "import": "./dist/components/box/box.web.js",
+      "require": "./dist/components/box/box.web.cjs",
+      "default": "./dist/components/box/box.web.js"
+    },
+    "./button": {
+      "react-native": {
+        "types": "./dist/components/button/button.native.d.ts",
+        "default": "./dist/components/button/button.native.js"
+      },
+      "types": "./dist/components/button/button.web.d.ts",
+      "import": "./dist/components/button/button.web.js",
+      "require": "./dist/components/button/button.web.cjs",
+      "default": "./dist/components/button/button.web.js"
+    },
+    "./chip": {
+      "react-native": {
+        "types": "./dist/components/chip/chip.native.d.ts",
+        "default": "./dist/components/chip/chip.native.js"
+      },
+      "types": "./dist/components/chip/chip.web.d.ts",
+      "import": "./dist/components/chip/chip.web.js",
+      "require": "./dist/components/chip/chip.web.cjs",
+      "default": "./dist/components/chip/chip.web.js"
+    },
+    "./color-spinner": {
+      "react-native": {
+        "types": "./dist/components/color-spinner/color-spinner.native.d.ts",
+        "default": "./dist/components/color-spinner/color-spinner.native.js"
+      },
+      "types": "./dist/components/color-spinner/color-spinner.web.d.ts",
+      "import": "./dist/components/color-spinner/color-spinner.web.js",
+      "require": "./dist/components/color-spinner/color-spinner.web.cjs",
+      "default": "./dist/components/color-spinner/color-spinner.web.js"
+    },
+    "./grid": {
+      "react-native": {
+        "types": "./dist/components/grid/grid.native.d.ts",
+        "default": "./dist/components/grid/grid.native.js"
+      },
+      "types": "./dist/components/grid/grid.web.d.ts",
+      "import": "./dist/components/grid/grid.web.js",
+      "require": "./dist/components/grid/grid.web.cjs",
+      "default": "./dist/components/grid/grid.web.js"
+    },
+    "./icon": {
+      "react-native": {
+        "types": "./dist/components/icon/icon.native.d.ts",
+        "default": "./dist/components/icon/icon.native.js"
+      },
+      "types": "./dist/components/icon/icon.web.d.ts",
+      "import": "./dist/components/icon/icon.web.js",
+      "require": "./dist/components/icon/icon.web.cjs",
+      "default": "./dist/components/icon/icon.web.js"
+    },
     "./input": {
       "react-native": {
         "types": "./dist/components/input/input.native.d.ts",
@@ -22,12 +89,48 @@
       "import": "./dist/components/input/input.web.js",
       "require": "./dist/components/input/input.web.cjs",
       "default": "./dist/components/input/input.web.js"
+    },
+    "./link": {
+      "react-native": {
+        "types": "./dist/components/link/link.native.d.ts",
+        "default": "./dist/components/link/link.native.js"
+      },
+      "types": "./dist/components/link/link.web.d.ts",
+      "import": "./dist/components/link/link.web.js",
+      "require": "./dist/components/link/link.web.cjs",
+      "default": "./dist/components/link/link.web.js"
+    },
+    "./spinner": {
+      "react-native": {
+        "types": "./dist/components/spinner/spinner.native.d.ts",
+        "default": "./dist/components/spinner/spinner.native.js"
+      },
+      "types": "./dist/components/spinner/spinner.web.d.ts",
+      "import": "./dist/components/spinner/spinner.web.js",
+      "require": "./dist/components/spinner/spinner.web.cjs",
+      "default": "./dist/components/spinner/spinner.web.js"
+    },
+    "./theme-provider": {
+      "react-native": {
+        "types": "./dist/components/theme-provider/theme-provider.native.d.ts",
+        "default": "./dist/components/theme-provider/theme-provider.native.js"
+      },
+      "types": "./dist/components/theme-provider/theme-provider.web.d.ts",
+      "import": "./dist/components/theme-provider/theme-provider.web.js",
+      "require": "./dist/components/theme-provider/theme-provider.web.cjs",
+      "default": "./dist/components/theme-provider/theme-provider.web.js"
+    },
+    "./typography": {
+      "react-native": {
+        "types": "./dist/components/typography/typography.native.d.ts",
+        "default": "./dist/components/typography/typography.native.js"
+      },
+      "types": "./dist/components/typography/typography.web.d.ts",
+      "import": "./dist/components/typography/typography.web.js",
+      "require": "./dist/components/typography/typography.web.cjs",
+      "default": "./dist/components/typography/typography.web.js"
     }
   },
-  "files": [
-    "dist",
-    "!**/*.tsbuildinfo"
-  ],
   "scripts": {
     "build": "tsdown",
     "lint": "eslint --max-warnings 0",
@@ -37,7 +140,6 @@
   },
   "devDependencies": {
     "@org/eslint-config": "*",
-    "@org/typescript-config": "*",
     "@storybook/react": "*",
     "@testing-library/dom": "*",
     "@testing-library/jest-dom": "*",

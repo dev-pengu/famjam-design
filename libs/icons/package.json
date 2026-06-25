@@ -1,6 +1,6 @@
 {
   "name": "@famjam/icons",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "type": "module",
   "main": "./dist/index.web.js",
   "types": "./dist/index.web.d.ts",
@@ -24,18 +24,12 @@
     },
     "./*.svg": "./dist/assets/*.svg"
   },
-  "files": [
-    "dist",
-    "!**/*.tsbuildinfo",
-    "assets"
-  ],
   "scripts": {
     "generate-icons": "node ./scripts/generate-icons.js",
     "build": "pnpm run generate-icons && tsdown && tsc -b --emitDeclarationOnly --force",
     "check-types": "tsc -b --noEmit"
   },
   "devDependencies": {
-    "@org/typescript-config": "*",
     "@svgr/core": "*",
     "@svgr/plugin-jsx": "*",
     "@svgr/plugin-svgo": "*",
