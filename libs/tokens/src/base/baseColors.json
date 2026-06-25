@@ -1,0 +1,32 @@
+{
+  "color-success-dark": {
+    "$type": "color",
+    "$value": "#067D35"
+  },
+  "color-success-light": {
+    "$type": "color",
+    "$value": "#F4FBF5"
+  },
+  "color-error-dark": {
+    "$type": "color",
+    "$value": "#DD1934"
+  },
+  "color-error-light": {
+    "$type": "color",
+    "$value": "#FFF5F5"
+  },
+  "Brand": {
+    "color-brand-primary": {
+      "$type": "color",
+      "$value": "#FFF4C7"
+    },
+    "color-brand-secondary": {
+      "$type": "color",
+      "$value": "#C5F6FA"
+    },
+    "color-brand-tertiary": {
+      "$type": "color",
+      "$value": "#F8AAFC"
+    }
+  }
+}

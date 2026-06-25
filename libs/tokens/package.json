@@ -1,0 +1,72 @@
+{
+  "name": "@famjam/tokens",
+  "version": "0.0.1",
+  "type": "module",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "react-native": "./dist/index.js",
+      "import": "./dist/index.web.js",
+      "require": "./dist/index.cjs",
+      "default": "./dist/index.web.js"
+    },
+    "./ui.styles": {
+      "types": "./dist/ui.styles.d.ts",
+      "import": "./dist/ui.styles.js",
+      "default": "./dist/ui.styles.js"
+    },
+    "./base.styles": {
+      "types": "./dist/base.styles.d.ts",
+      "import": "./dist/base.styles.js",
+      "default": "./dist/base.styles.js"
+    },
+    "./base": {
+      "types": "./dist/base.web.d.ts",
+      "react-native": "./dist/base.native.js",
+      "import": "./dist/base.web.js",
+      "require": "./dist/base.web.cjs",
+      "default": "./dist/base.web.js"
+    },
+    "./dark": {
+      "types": "./dist/dark.web.d.ts",
+      "react-native": "./dist/dark.native.js",
+      "import": "./dist/dark.web.js",
+      "require": "./dist/dark.web.cjs",
+      "default": "./dist/dark.web.js"
+    },
+    "./ui": {
+      "types": "./dist/ui.web.d.ts",
+      "react-native": "./dist/ui.native.js",
+      "import": "./dist/ui.web.js",
+      "require": "./dist/ui.web.cjs",
+      "default": "./dist/ui.web.js"
+    }
+  },
+  "files": [
+    "dist",
+    "!**/*.tsbuildinfo"
+  ],
+  "scripts": {
+    "build": "node index.js",
+    "lint": "eslint --max-warnings 0",
+    "check-types": "tsc --noEmit"
+  },
+  "dependencies": {
+    "json-to-ts": "2.1.0"
+  },
+  "devDependencies": {
+    "@org/eslint-config": "*",
+    "@org/typescript-config": "*",
+    "eslint": "*",
+    "style-dictionary": "*",
+    "tsdown": "*",
+    "typescript": "*"
+  },
+  "engines": {
+    "npm": "please-use-pnpm"
+  },
+  "engineStrict": true
+}

@@ -1,0 +1,13 @@
+@keyframes spinner-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.spinner {
+  animation: spinner-spin 0.75s linear infinite reverse;
+  flex-shrink: 0;
+}

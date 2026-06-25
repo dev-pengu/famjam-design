@@ -1,0 +1,21 @@
+.link {
+  text-decoration: underline;
+  cursor: pointer;
+  color: var(--color-text-link);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .link:hover {
+    color: var(--color-text-brand-secondary-dark);
+  }
+}
+
+.link:focus-visible {
+    color: var(--color-text-brand-secondary-dark);
+    outline: 1px dashed var(--color-text-brand-accent);
+    outline-offset: 1px;
+}
+
+.link:active {
+    color: var(--color-text-brand-secondary-dark)
+}

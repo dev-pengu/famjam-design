@@ -1,0 +1,207 @@
+.wrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+}
+
+.labelRow {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+}
+
+.label {
+  font-family: var(--font-family-roboto), sans-serif;
+  font-size: var(--size-16);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--size-20);
+}
+
+.labelRequired {
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text-error);
+}
+
+.floatLabel {
+  position: absolute;
+  left: var(--space-12);
+  top: var(--space-14);
+  z-index: 1;
+  padding: 0 var(--space-4);
+  color: var(--color-text-secondary);
+  pointer-events: none;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  transition:
+    top 0.15s ease,
+    transform 0.15s ease,
+    font-size 0.15s ease,
+    color 0.15s ease;
+}
+
+.floatLabelFloating {
+  top: 0;
+  transform: translateY(-50%);
+  font-size: var(--size-12);
+  color: var(--color-text-primary);
+}
+
+.floatLegend {
+  margin-left: var(--space-12);
+  padding: 0;
+  max-width: 0;
+  overflow: hidden;
+  height: 0;
+  font-family: var(--font-family-roboto), sans-serif;
+  font-size: var(--size-12);
+  font-weight: var(--font-weight-regular);
+  white-space: nowrap;
+  transition:
+    max-width 0s linear 0s,
+    padding 0s linear 0s;
+}
+
+.floatLegendVisible {
+  max-width: 999px;
+  padding: 0 var(--space-4);
+  transition:
+    max-width 0s linear 0.1s,
+    padding 0s linear 0.1s;
+}
+
+.floatLegendText {
+  visibility: hidden;
+  display: block;
+}
+
+.inputContainer {
+  position: relative;
+  width: 100%;
+  border: 1.5px solid transparent;
+  box-sizing: border-box;
+  border-radius: var(--radius-4);
+  display: flex;
+  background: var(--color-surface-primary);
+
+  margin: 0;
+  padding: 0;
+  min-width: 0;
+
+  transition:
+    border-width 0.15s ease,
+    border-color 0.15s ease,
+    background-color 0.15s ease;
+}
+
+.field {
+  min-height: var(--size-48);
+  align-items: center;
+}
+
+.large {
+  min-height: 120px;
+  align-items: flex-start;
+}
+
+.resting {
+  border: 1.5px solid var(--color-border-secondary);
+}
+
+.active {
+  border: 1.5px solid var(--color-border-primary);
+}
+
+.success {
+  border: 1.5px solid var(--color-border-success);
+}
+
+.error {
+  border: 1.5px solid var(--color-border-error);
+}
+
+.disabled {
+  border: 1.5px solid var(--color-border-secondary);
+  background: var(--color-surface-secondary);
+}
+
+.input,
+.textarea {
+  border: none;
+  outline: none;
+  background: transparent;
+  padding: var(--space-12);
+  color: var(--color-text-primary);
+  font-family: var(--font-family-roboto), sans-serif;
+  font-size: var(--size-16);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--size-20);
+}
+
+.input {
+  width: 100%;
+  height: 100%;
+}
+
+.textarea {
+  width: 100%;
+  min-height: 120px;
+  resize: none;
+}
+
+.input::placeholder,
+.textarea::placeholder {
+  color: var(--color-text-secondary);
+}
+
+.disabled .input,
+.disabled .textarea {
+  color: var(--color-text-disabled);
+  cursor: not-allowed;
+}
+
+.disabled .input::placeholder,
+.disabled .textarea::placeholder {
+  color: var(--color-text-disabled);
+}
+
+.inputContainerFloating .input,
+.inputContainerFloating .textarea {
+  padding-top: var(--space-16);
+  padding-bottom: var(--space-8);
+}
+
+.helperRow {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  gap: var(--space-8);
+}
+
+.characterCount {
+  justify-content: flex-end;
+}
+
+.helper {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  color: inherit;
+}
+
+.textSuccess {
+  color: var(--color-text-success);
+}
+
+.textError {
+  color: var(--color-text-error);
+}
+
+.input:focus,
+.textarea:focus {
+  outline: none;
+}

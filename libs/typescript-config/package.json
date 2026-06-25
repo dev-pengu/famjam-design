@@ -1,0 +1,12 @@
+{
+  "name": "@org/typescript-config",
+  "version": "0.0.1",
+  "private": true,
+  "publishConfig": {
+    "access": "public"
+  },
+  "engines": {
+    "npm": "please-use-pnpm"
+  },
+  "engineStrict": true
+}

@@ -1,0 +1,93 @@
+{
+  "name": "@famjam/ui",
+  "version": "0.0.1",
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "react-native": "./dist/index.js",
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs",
+      "default": "./dist/index.js"
+    },
+    "./input": {
+      "react-native": {
+        "types": "./dist/components/input/input.native.d.ts",
+        "default": "./dist/components/input/input.native.js"
+      },
+      "types": "./dist/components/input/input.web.d.ts",
+      "import": "./dist/components/input/input.web.js",
+      "require": "./dist/components/input/input.web.cjs",
+      "default": "./dist/components/input/input.web.js"
+    }
+  },
+  "files": [
+    "dist",
+    "!**/*.tsbuildinfo"
+  ],
+  "scripts": {
+    "build": "tsdown",
+    "lint": "eslint --max-warnings 0",
+    "check-types": "tsc -b --noEmit",
+    "test": "jest",
+    "test:coverage": "jest --coverage || true && pnpm dlx http-server coverage/lcov-report -o"
+  },
+  "devDependencies": {
+    "@org/eslint-config": "*",
+    "@org/typescript-config": "*",
+    "@storybook/react": "*",
+    "@testing-library/dom": "*",
+    "@testing-library/jest-dom": "*",
+    "@testing-library/react": "*",
+    "@testing-library/react-native": "*",
+    "@types/jest": "*",
+    "@types/node": "*",
+    "@types/react": "*",
+    "@types/react-dom": "*",
+    "babel-preset-expo": "*",
+    "eslint": "*",
+    "eslint-plugin-testing-library": "*",
+    "jest": "*",
+    "jest-environment-jsdom": "*",
+    "react-native": "*",
+    "react-native-svg": "*",
+    "ts-jest": "*",
+    "tsdown": "*",
+    "typescript": "*",
+    "unplugin-lightningcss": "*"
+  },
+  "dependencies": {
+    "@famjam/fonts": "*",
+    "@famjam/icons": "*",
+    "@famjam/tokens": "*",
+    "@radix-ui/primitive": "*",
+    "@radix-ui/react-accessible-icon": "*",
+    "@radix-ui/react-checkbox": "*",
+    "@radix-ui/react-compose-refs": "*",
+    "@radix-ui/react-context": "*",
+    "@radix-ui/react-presence": "*",
+    "@radix-ui/react-primitive": "*",
+    "@radix-ui/react-roving-focus": "*",
+    "@radix-ui/react-slot": "*",
+    "@radix-ui/react-use-callback-ref": "*",
+    "@radix-ui/react-use-controllable-state": "*",
+    "@radix-ui/react-use-effect-event": "*",
+    "@radix-ui/react-use-layout-effect": "*",
+    "@radix-ui/react-use-previous": "*",
+    "@radix-ui/react-use-size": "*",
+    "@radix-ui/react-visually-hidden": "*",
+    "react": "*",
+    "react-dom": "*",
+    "ts-node": "*"
+  },
+  "peerDependencies": {
+    "react-native-svg": ">=14"
+  },
+  "engines": {
+    "npm": "please-use-pnpm"
+  },
+  "engineStrict": true
+}

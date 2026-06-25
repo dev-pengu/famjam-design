@@ -1,3 +1,24 @@
 {
-  "singleQuote": true
+  "printWidth": 120,
+  "singleQuote": true,
+  "jsxSingleQuote": true,
+  "singleAttributePerLine": true,
+  "trailingComma": "all",
+  "arrowParens": "always",
+  "semi": true,
+  "tabWidth": 2,
+  "bracketSpacing": true,
+  "embeddedLanguageFormatting": "auto",
+  "htmlWhitespaceSensitivity": "css",
+  "proseWrap": "preserve",
+  "quoteProps": "as-needed",
+  "useTabs": false,
+  "overrides": [
+    {
+      "files": ["*.md", "*.mdx"],
+      "options": {
+        "tabWidth": 4
+      }
+    }
+  ]
 }

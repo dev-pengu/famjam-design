@@ -1,0 +1,13 @@
+{
+  "extends": "@org/typescript-config/react-library.json",
+  "compilerOptions": {
+    "tsBuildInfoFile": "./node_modules/.tmp/tsonfig.lib.tsbuildinfo",
+    "composite": true,
+    "incremental": true,
+    "outDir": "dist",
+    "jsx": "react-jsx",
+    "types": ["jest"]
+  },
+  "include": ["src/native/**/*", "src/**/*.test.ts"],
+  "exclude": ["node_modules", "dist"]
+}
