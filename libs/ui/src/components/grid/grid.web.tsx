@@ -1,6 +1,6 @@
 import type { HTMLAttributes } from 'react';
 import { useEffect } from 'react';
-import { useBreakpoints } from '../../hooks';
+import { useBreakpoints } from '../../hooks/use-breakpoints/use-breakpoints.web';
 import { type GridColumnProps, type GridProps, type GridRowProps } from './grid.types';
 import { normalizeOffset, normalizeSpan, useGridLayout, setGridLayout } from './grid-base';
 import { cx } from '../../utils/cx';

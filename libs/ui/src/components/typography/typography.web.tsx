@@ -1,5 +1,5 @@
 import React from 'react';
-import { useTheme } from '../theme-provider';
+import { useTheme } from '../theme-provider/theme-context';
 import {
   HeadingTag,
   TypographyBodyProps,
@@ -196,7 +196,7 @@ export const Typography = Object.assign(
 export {
   TypographyBody as Body,
   TypographyDisplay as Display,
-  TypographyHeadline as headline,
+  TypographyHeadline as Headline,
   TypographyTitle as Title,
 };
 

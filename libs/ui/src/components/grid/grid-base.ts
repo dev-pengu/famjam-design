@@ -1,5 +1,5 @@
 import { useSyncExternalStore } from 'react';
-import { Breakpoint } from '../../hooks';
+import { Breakpoint } from '../../hooks/use-breakpoints/use-breakpoints.types';
 import type { GridBreakpointValues } from './grid.types';
 
 const space16 = 16;
@@ -17,7 +17,7 @@ export const GRID_DEFAULT_GUTTER: Record<Breakpoint, number> = {
   [Breakpoint.Desktop]: space24,
   [Breakpoint.Tablet]: space24,
   [Breakpoint.Mobile]: space16,
-};
+} as const;
 
 export const GRID_DEFAULT_MARGIN: Record<Breakpoint, number> = {
   [Breakpoint.Desktop]: space80,

@@ -2,9 +2,10 @@ import { IconName } from '@famjam/icons';
 import styles from './chip.web.module.css';
 import { cx } from '../../utils/cx';
 import { ChipProps } from './chip.types';
-import { Icon } from '../icon';
-import { useTheme } from '../theme-provider';
-import { Typography, TypographySize } from '../typography';
+import { Icon } from '../icon/icon.web';
+import { useTheme } from '../theme-provider/theme-context';
+import { Typography } from '../typography/typography.web';
+import { TypographySize } from '../typography/typography.types';
 import { FontSize } from '@famjam/tokens/ui.styles';
 
 export const Chip = ({

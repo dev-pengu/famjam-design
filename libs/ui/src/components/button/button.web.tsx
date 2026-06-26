@@ -1,8 +1,8 @@
 import { Slot } from '@radix-ui/react-slot';
 import { ButtonProps, ButtonSize, ButtonVariant } from './button.types';
-import { Spinner } from '../spinner';
-import { SpinnerSize } from '../spinner';
-import { useTheme } from '../theme-provider';
+import { Spinner } from '../spinner/spinner.web';
+import { SpinnerSize } from '../spinner/spinner.types';
+import { useTheme } from '../theme-provider/theme-context';
 import { cx } from '../../utils/cx';
 import styles from './button.web.module.css';
 

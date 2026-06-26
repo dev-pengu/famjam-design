@@ -2,9 +2,10 @@ import { useId, useState, useCallback, useEffect, useMemo } from 'react';
 import styles from './input.web.module.css';
 import { cx } from '../../utils/cx';
 import { InputProps, InputVariant, LabelVariant } from './input.types';
-import { Typography, TypographySize } from '../typography';
+import { TypographySize } from '../typography/typography.types';
+import { Typography } from '../typography/typography.web';
 import { InputState, helperPayloadMap } from './input-base';
-import { Icon } from '../icon';
+import { Icon } from '../icon/icon.web';
 
 const helperClassMap: Record<InputState, string | undefined> = {
   [InputState.Success]: styles.textSuccess,

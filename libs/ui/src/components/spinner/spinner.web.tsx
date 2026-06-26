@@ -1,4 +1,4 @@
-import { useTheme } from '../theme-provider';
+import { useTheme } from '../theme-provider/theme-context';
 import { SPINNER_SIZE_VALUE, SpinnerSize, type SpinnerProps } from './spinner.types';
 import styles from './spinner.web.module.css';
 import { cx } from '../../utils/cx';

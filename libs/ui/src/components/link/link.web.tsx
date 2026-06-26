@@ -1,10 +1,10 @@
 import React from 'react';
-import { useTheme } from '../theme-provider';
+import { useTheme } from '../theme-provider/theme-context';
 import { LinkProps } from './link.types';
-import { TypographyScale, TypographySize } from '../typography';
+import { TypographyScale, TypographySize } from '../typography/typography.types';
 import { cx } from '../../utils/cx';
 import styles from './link.web.module.css';
-import { getBoldClass, sizeClassMap } from '../typography';
+import { getBoldClass, sizeClassMap } from '../typography/typography.web';
 
 export type WebLinkProps = LinkProps & React.AnchorHTMLAttributes<HTMLAnchorElement>;
 
