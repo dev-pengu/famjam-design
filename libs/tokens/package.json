@@ -54,7 +54,7 @@
     "json-to-ts": "2.1.0"
   },
   "devDependencies": {
-    "@org/eslint-config": "*",
+    "@org/eslint-config": "workspace:*",
     "eslint": "*",
     "style-dictionary": "*",
     "tsdown": "*",

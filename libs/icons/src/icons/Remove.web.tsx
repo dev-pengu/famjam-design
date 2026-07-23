@@ -7,16 +7,10 @@ const Remove = (props: SVGProps<SVGSVGElement>) => (
     xmlns='http://www.w3.org/2000/svg'
     width='1em'
     height='1em'
-    viewBox='0 0 24 24'
+    viewBox='0 -960 960 960'
     {...props}
   >
-    <path
-      stroke='#000'
-      strokeLinecap='round'
-      strokeLinejoin='round'
-      strokeWidth={2}
-      d='M6 12h12'
-    />
+    <path d='M200-440v-80h560v80z' />
   </svg>
 );
 export default Remove;

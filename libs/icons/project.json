@@ -9,7 +9,7 @@
     "build": {
       "executor": "nx:run-commands",
       "outputs": ["{projectRoot}/dist"],
-      "dependsOn": ["build"],
+      "dependsOn": ["bundle"],
       "options": {
         "parallel": false,
         "commands": [

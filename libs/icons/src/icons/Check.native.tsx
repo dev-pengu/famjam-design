@@ -7,16 +7,10 @@ const Check = (props: SvgProps) => (
   <Svg
     width={24}
     height={24}
-    stroke='#222'
-    viewBox='0 0 24 24'
+    viewBox='0 -960 960 960'
     {...props}
   >
-    <Path
-      strokeLinecap='round'
-      strokeLinejoin='round'
-      strokeWidth={2}
-      d='M4 12.611 8.923 17.5 20 6.5'
-    />
+    <Path d='M382-240 154-468l57-57 171 171 367-367 57 57z' />
   </Svg>
 );
 export default Check;

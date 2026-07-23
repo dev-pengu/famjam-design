@@ -7,18 +7,10 @@ const Location = (props: SVGProps<SVGSVGElement>) => (
     xmlns='http://www.w3.org/2000/svg'
     width='1em'
     height='1em'
-    viewBox='0 0 24 24'
+    viewBox='0 -960 960 960'
     {...props}
   >
-    <g
-      stroke='#000'
-      strokeLinecap='round'
-      strokeLinejoin='round'
-      strokeWidth={2}
-    >
-      <path d='M12 21c3.5-3.6 7-6.824 7-10.8S15.866 3 12 3s-7 3.224-7 7.2 3.5 7.2 7 10.8' />
-      <path d='M12 13a3 3 0 1 0 0-6 3 3 0 0 0 0 6' />
-    </g>
+    <path d='M536.5-503.5Q560-527 560-560t-23.5-56.5T480-640t-56.5 23.5T400-560t23.5 56.5T480-480t56.5-23.5M480-186q122-112 181-203.5T720-552q0-109-69.5-178.5T480-800t-170.5 69.5T240-552q0 71 59 162.5T480-186m0 106Q319-217 239.5-334.5T160-552q0-150 96.5-239T480-880t223.5 89T800-552q0 100-79.5 217.5T480-80m0-480' />
   </svg>
 );
 export default Location;

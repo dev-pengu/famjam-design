@@ -1,0 +1,12 @@
+.actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--space-8, 0.5rem);
+  padding: var(--space-8, 0.5rem) var(--space-16, 1rem);
+}
+
+.actionsNoSpacing {
+  gap: 0;
+  padding: 0;
+}

@@ -7,16 +7,10 @@ const ChevronUp = (props: SVGProps<SVGSVGElement>) => (
     xmlns='http://www.w3.org/2000/svg'
     width='1em'
     height='1em'
-    stroke='#222'
-    viewBox='0 0 24 24'
+    viewBox='0 -960 960 960'
     {...props}
   >
-    <path
-      strokeLinecap='round'
-      strokeLinejoin='round'
-      strokeWidth={2}
-      d='m6 15 6-6 6 6'
-    />
+    <path d='M480-528 296-344l-56-56 240-240 240 240-56 56z' />
   </svg>
 );
 export default ChevronUp;

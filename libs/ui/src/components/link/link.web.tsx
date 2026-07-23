@@ -1,6 +1,6 @@
 import React from 'react';
 import { useTheme } from '../theme-provider/theme-context';
-import { LinkProps } from './link.types';
+import { LinkProps, LinkUnderline } from './link.types';
 import { TypographyScale, TypographySize } from '../typography/typography.types';
 import { cx } from '../../utils/cx';
 import styles from './link.web.module.css';
@@ -8,12 +8,20 @@ import { getBoldClass, sizeClassMap } from '../typography/typography.web';
 
 export type WebLinkProps = LinkProps & React.AnchorHTMLAttributes<HTMLAnchorElement>;
 
+const underlineClassMap: Record<LinkUnderline, string | undefined> = {
+  [LinkUnderline.Always]: styles['underline-always'],
+  [LinkUnderline.Hover]: styles['underline-hover'],
+  [LinkUnderline.None]: styles['underline-none'],
+};
+
 export const Link = ({
   children,
   variant = TypographyScale.Body,
   size = TypographySize.Medium,
   bold = false,
   rel,
+  as: Comp = 'a',
+  underline = LinkUnderline.Always,
   className,
   testID,
   target,
@@ -25,13 +33,20 @@ export const Link = ({
     target === '_blank' ? [...new Set(['noopener', 'noreferrer', ...(rel?.split(/\s+/) ?? [])])].join(' ') : rel;
 
   return (
-    <a
+    <Comp
       rel={resolvedRel}
-      className={cx(styles.link, className, sizeClassMap[variant][size], getBoldClass(variant, bold))}
+      className={cx(
+        styles.link,
+        underlineClassMap[underline],
+        className,
+        sizeClassMap[variant][size],
+        getBoldClass(variant, bold),
+      )}
       data-testid={testID}
+      target={target}
       {...props}
     >
       {children}
-    </a>
+    </Comp>
   );
 };

@@ -1,0 +1,9 @@
+.content {
+  padding: var(--space-16, 1rem);
+  flex: 1;
+}
+
+.header + .content,
+.media + .content {
+  padding-top: var(--space-8, 0.5rem);
+}

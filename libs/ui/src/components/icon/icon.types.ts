@@ -5,7 +5,7 @@ type BaseIconProps = {
   name: IconName;
   size?: number;
   color?: Color | 'currentColor' | `var(--${string})`;
-};
+} & React.SVGProps<SVGSVGElement>;
 
 type DecorativeIconProps = BaseIconProps & {
   decorative?: true;

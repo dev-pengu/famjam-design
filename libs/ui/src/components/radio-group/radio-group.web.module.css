@@ -1,0 +1,33 @@
+.group {
+  display: flex;
+  gap: var(--space-4);
+}
+
+.group.vertical {
+  flex-direction: column;
+}
+
+.group.horizontal {
+  flex-direction: row;
+}
+
+.label {
+  display: flex;
+  align-items: center;
+  padding-bottom: var(--space-4);
+  color: var(--color-text-primary);
+}
+
+.error {
+  color: var(--color-text-error);
+}
+
+.required {
+  padding-left: var(--space-4);
+  color: var(--color-text-error);
+}
+
+.helperText {
+  font-family: var(--font-family-roboto), sans-serif;
+  padding-top: var(--space-8);
+}

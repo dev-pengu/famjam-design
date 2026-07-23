@@ -1,0 +1,185 @@
+/* Root */
+.root {
+  position: relative;
+  display: inline-flex;
+  flex-shrink: 0;
+}
+
+/* Badge */
+.badge {
+  position: absolute;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--font-size-10);
+  font-weight: var(--font-weight-bold);
+  line-height: 1;
+  white-space: nowrap;
+  border: 2px solid var(--color-surface-primary);
+  border-radius: var(--radius-40);
+  min-width: 1.25rem;
+  height: 1.25rem;
+  padding: 0 0.3rem;
+  z-index: 1;
+  box-sizing: border-box;
+  pointer-events: none;
+}
+
+/* Dot variant — no content, smaller */
+.dot {
+  width: 0.825rem;
+  height: 0.825rem;
+  min-width: unset;
+  padding: 0;
+}
+
+/* Horizontal alignment */
+.badge.right {
+  right: 0;
+  transform: translateX(50%);
+}
+
+.badge.left {
+  left: 0;
+  transform: translateX(-50%);
+}
+
+/* Vertical alignment */
+.badge.top {
+  top: 0;
+  transform: translateY(-50%);
+}
+
+.badge.bottom {
+  bottom: 0;
+  transform: translateY(50%);
+}
+
+/* Combined transforms — horizontal + vertical */
+.badge.right.top {
+  transform: translate(50%, -50%);
+}
+.badge.right.bottom {
+  transform: translate(50%, 50%);
+}
+.badge.left.top {
+  transform: translate(-50%, -50%);
+}
+.badge.left.bottom {
+  transform: translate(-50%, 50%);
+}
+
+/* Dot combined transforms */
+.badge.dot.right.top {
+  transform: translate(50%, -50%);
+}
+.badge.dot.right.bottom {
+  transform: translate(50%, 50%);
+}
+.badge.dot.left.top {
+  transform: translate(-50%, -50%);
+}
+.badge.dot.left.bottom {
+  transform: translate(-50%, 50%);
+}
+
+/* Variants */
+.badge.primary {
+  background: var(--color-surface-brand-secondary-dark);
+  color: var(--color-text-inverse);
+}
+.badge.secondary {
+  background: var(--color-surface-inverse-secondary);
+  color: var(--color-text-inverse);
+}
+.badge.success {
+  background: var(--color-surface-success-dark);
+  color: var(--color-text-inverse);
+}
+.badge.warning {
+  background: var(--color-surface-warning-dark);
+  color: var(--color-text-inverse);
+}
+.badge.error {
+  background: var(--color-surface-error-dark);
+  color: var(--color-text-inverse);
+}
+.badge.info {
+  background: var(--color-surface-info-dark);
+  color: var(--color-text-inverse);
+}
+
+/* Pulse animation */
+@keyframes badgePulse {
+  0% {
+    transform: translate(50%, -50%) scale(1);
+  }
+  40% {
+    transform: translate(50%, -50%) scale(1.3);
+  }
+  70% {
+    transform: translate(50%, -50%) scale(0.9);
+  }
+  100% {
+    transform: translate(50%, -50%) scale(1);
+  }
+}
+
+/* One keyframe per alignment combination so the translate is preserved */
+@keyframes badgePulseLeftTop {
+  0% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+  40% {
+    transform: translate(-50%, -50%) scale(1.3);
+  }
+  70% {
+    transform: translate(-50%, -50%) scale(0.9);
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+@keyframes badgePulseRightBottom {
+  0% {
+    transform: translate(50%, 50%) scale(1);
+  }
+  40% {
+    transform: translate(50%, 50%) scale(1.3);
+  }
+  70% {
+    transform: translate(50%, 50%) scale(0.9);
+  }
+  100% {
+    transform: translate(50%, 50%) scale(1);
+  }
+}
+
+@keyframes badgePulseLeftBottom {
+  0% {
+    transform: translate(-50%, 50%) scale(1);
+  }
+  40% {
+    transform: translate(-50%, 50%) scale(1.3);
+  }
+  70% {
+    transform: translate(-50%, 50%) scale(0.9);
+  }
+  100% {
+    transform: translate(-50%, 50%) scale(1);
+  }
+}
+
+.badge.pulse.right.top {
+  animation: badgePulse 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.badge.pulse.left.top {
+  animation: badgePulseLeftTop 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.badge.pulse.right.bottom {
+  animation: badgePulseRightBottom 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.badge.pulse.left.bottom {
+  animation: badgePulseLeftBottom 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}

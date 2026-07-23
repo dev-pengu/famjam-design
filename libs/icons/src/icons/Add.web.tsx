@@ -7,14 +7,10 @@ const Add = (props: SVGProps<SVGSVGElement>) => (
     xmlns='http://www.w3.org/2000/svg'
     width='1em'
     height='1em'
-    stroke='#222'
-    viewBox='0 0 1920 1920'
+    viewBox='0 -960 960 960'
     {...props}
   >
-    <path
-      fillRule='evenodd'
-      d='M866.332 213v653.332H213v186.666h653.332v653.332h186.666v-653.332h653.332V866.332h-653.332V213z'
-    />
+    <path d='M440-120v-320H120v-80h320v-320h80v320h320v80H520v320z' />
   </svg>
 );
 export default Add;

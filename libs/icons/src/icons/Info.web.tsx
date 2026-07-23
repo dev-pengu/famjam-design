@@ -7,24 +7,10 @@ const Info = (props: SVGProps<SVGSVGElement>) => (
     xmlns='http://www.w3.org/2000/svg'
     width='1em'
     height='1em'
-    viewBox='0 0 48 48'
+    viewBox='0 -960 960 960'
     {...props}
   >
-    <g data-name='Layer 2'>
-      <path
-        d='M0 0h48v48H0z'
-        data-name='invisible box'
-      />
-      <g data-name='icons Q2'>
-        <path d='M24 2a22 22 0 1 0 22 22A21.9 21.9 0 0 0 24 2m0 40a18 18 0 1 1 18-18 18.1 18.1 0 0 1-18 18' />
-        <path d='M24 20a2 2 0 0 0-2 2v12a2 2 0 0 0 4 0V22a2 2 0 0 0-2-2' />
-        <circle
-          cx={24}
-          cy={14}
-          r={2}
-        />
-      </g>
-    </g>
+    <path d='M440-280h80v-240h-80zm68.5-331.5Q520-623 520-640t-11.5-28.5T480-680t-28.5 11.5T440-640t11.5 28.5T480-600t28.5-11.5M480-80q-83 0-156-31.5T197-197t-85.5-127T80-480t31.5-156T197-763t127-85.5T480-880t156 31.5T763-763t85.5 127T880-480t-31.5 156T763-197t-127 85.5T480-80m0-80q134 0 227-93t93-227-93-227-227-93-227 93-93 227 93 227 227 93m0-320' />
   </svg>
 );
 export default Info;

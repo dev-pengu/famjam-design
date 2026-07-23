@@ -1,0 +1,43 @@
+.backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: var(--z-index-backdrop, 350);
+  background: color-mix(in srgb, var(--color-shadow-primary) 48%, transparent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.fadeIn {
+  animation: backdropFadeIn var(--fade-duration, 200ms) ease forwards;
+}
+
+.fadeOut {
+  animation: backdropFadeOut var(--fade-duration, 200ms) ease forwards;
+}
+
+@keyframes backdropFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes backdropFadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+.content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

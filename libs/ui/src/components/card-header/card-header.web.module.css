@@ -1,0 +1,34 @@
+.header {
+  display: flex;
+  align-items: flex-start;
+  padding: var(--space-16, 1rem);
+  gap: var(--space-12, 0.75rem);
+}
+
+.headerAvatar {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+}
+
+.headerContent {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2, 0.125rem);
+}
+
+.headerTitle * {
+  margin: 0;
+}
+
+.headerSubheader * {
+  margin: 0;
+}
+
+.headerAction {
+  flex-shrink: 0;
+  margin-top: calc(var(--space-4, 0.25rem) * -1);
+  margin-right: calc(var(--space-4, 0.25rem) * -1);
+}

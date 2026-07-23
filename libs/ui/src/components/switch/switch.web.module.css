@@ -1,0 +1,145 @@
+.root {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.root.vertical {
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.root.placement-top,
+.root.placement-bottom {
+  align-items: flex-start;
+}
+
+.switch.small {
+  --thumb-size: 1.25rem;
+  --track-size: 0.75rem;
+}
+.switch.default {
+  --thumb-size: 2rem;
+  --track-size: 1.25rem;
+}
+
+.switch.primary {
+  --toggle-color: var(--color-surface-brand-secondary-dark);
+}
+.switch.secondary {
+  --toggle-color: var(--color-surface-inverse-secondary);
+}
+.switch.accent {
+  --toggle-color: var(--color-surface-accent-dark);
+}
+.switch.success {
+  --toggle-color: var(--color-surface-success-dark);
+}
+.switch.warning {
+  --toggle-color: var(--color-surface-warning-dark);
+}
+.switch.info {
+  --toggle-color: var(--color-surface-info-dark);
+}
+.switch.error {
+  --toggle-color: var(--color-surface-error-dark);
+}
+
+.label {
+  display: inline-flex;
+  color: var(--color-text-primary);
+  cursor: pointer;
+  user-select: none;
+  line-height: 1.4;
+}
+
+.label.labelDisabled {
+  color: var(--color-text-disabled);
+  cursor: not-allowed;
+}
+
+.required {
+  color: var(--color-text-error);
+  margin-left: 0.2rem;
+}
+
+.switch {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  flex-shrink: 0;
+  border: none;
+  border-radius: 9999px;
+  background: var(--color-border-secondary);
+  cursor: pointer;
+  padding: 0;
+  transition: background 0.2s ease;
+  outline: none;
+  width: calc(var(--track-size) * 2.5);
+  height: var(--track-size);
+}
+
+.switch.checked {
+  background: color-mix(in srgb, var(--toggle-color) 36%, transparent);
+}
+
+.switch::before {
+  content: '';
+  position: absolute;
+  inset: 50%;
+  border-radius: 9999px;
+  background: var(--toggle-color, var(--color-surface-inverse-secondary));
+  opacity: 0;
+  transform: translate(-50%, -50%) scale(0);
+  transition:
+    opacity 0.2s,
+    transform 0.2s;
+  pointer-events: none;
+}
+
+.switch:hover:not(.disabled)::before {
+  opacity: 0.1;
+  transform: translate(-50%, -50%) scale(2.5);
+}
+
+.switch:focus-visible {
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--toggle-color) 32%, transparent);
+}
+
+.switch.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.thumb {
+  position: absolute;
+  left: 0;
+  border-radius: 9999px;
+  background: var(--color-surface-secondary);
+  box-shadow: 0 1px 4px color-mix(in srgb, var(--color-shadow-primary) 32%, transparent);
+  transition:
+    transform 0.25s cubic-bezier(0.4, 0, 0.2, 1),
+    left 0.25s ease,
+    background 0.2s ease;
+  width: var(--thumb-size);
+  height: var(--thumb-size);
+  will-change: transform;
+}
+
+.switch.checked .thumb {
+  left: calc(100%);
+  transform: translateX(-100%);
+  background: var(--toggle-color, #fff);
+}
+
+.root:focus-visible .thumb {
+  box-shadow:
+    0 0 0 4px color-mix(in srgb, var(--toggle-color) 24%, transparent),
+    0 1px 4px color-mix(in srgb, var(--color-shadow-primary) 24%, transparent);
+}
+
+.root:hover .thumb {
+  box-shadow:
+    0 0 0 6px color-mix(in srgb, var(--toggle-color) 16%, transparent),
+    0 1px 4px color-mix(in srgb, var(--color-shadow-primary) 24%, transparent);
+}

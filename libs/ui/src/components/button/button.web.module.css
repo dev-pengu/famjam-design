@@ -1,21 +1,40 @@
 .button {
+  --bg-color: var(--color-surface-inverse-primary);
+  --bg-color-hover: var(--color-surface-inverse-secondary);
+  --text-color: var(--color-text-inverse);
+  --text-color-hover: var(--color-text-inverse);
+  --border-color: var(--color-border-primary);
+  --border-color-hover: var(--color-border-primary);
+  --bg-glass-color: color-mix(in srgb, var(--color-surface-primary), 12%, transparent);
+  --bg-glass-color-hover: color-mix(in srgb, var(--color-surface-primary), 22%, transparent);
+  --text-glass-color: var(--color-text-tertiary);
+  --text-glass-color-hover: var(--color-text-secondary);
   box-sizing: border-box;
   position: relative;
   display: inline-flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  border-radius: var(--radius-4);
-  border: 1px solid transparent;
-  font-family: var(--font-family-roboto), sans-serif;
-  font-style: normal;
-  font-weight: var(--font-weight-bold);
-  letter-spacing: 0px;
+  letter-spacing: var(--space-2);
+  text-transform: uppercase;
   cursor: pointer;
   transition:
-    background-color 0.15s ease,
+    background 0.15s ease,
+    color 0.15s ease,
     border-color 0.15s ease,
     opacity 0.15s ease;
+}
+
+.button.rounded {
+  border-radius: var(--radius-40);
+}
+
+.button.square {
+  border-radius: var(--radius-4);
+}
+
+a.button {
+  text-decoration: none;
 }
 
 .content {
@@ -44,7 +63,6 @@
   padding: 0 var(--space-12);
   padding-top: var(--space-2);
   gap: var(--space-8);
-  font-size: var(--size-12);
   line-height: var(--size-16);
 }
 
@@ -53,7 +71,6 @@
   padding: 0 var(--space-16);
   padding-top: var(--space-2);
   gap: var(--space-12);
-  font-size: var(--size-16);
   line-height: var(--size-24);
 }
 
@@ -62,51 +79,93 @@
   padding: 0 var(--space-24);
   padding-top: var(--space-2);
   gap: var(--space-12);
-  font-size: var(--size-16);
   line-height: var(--size-24);
 }
 
 .filled {
-  background-color: var(--color-button-filled-surface-default);
-  color: var(--color-button-filled-label);
+  border: none;
+  background-color: var(--bg-color);
+  color: var(--text-color);
 }
 
 .filled:hover:not(:disabled):not([data-disabled]):not([data-loading]) {
-  background: var(--color-button-filled-surface-hover);
+  background: var(--bg-color-hover);
+  color: var(--text-color-hover);
 }
 
 .filled:active:not(:disabled):not([data-disabled]):not([data-loading]) {
-  background: var(--color-button-filled-surface-pressed);
+  background: var(--bg-color-hover);
   opacity: 0.92;
 }
 
 .outline {
   background: transparent;
-  border-color: var(--color-button-outline-border-default);
-  color: var(--color-button-outline-label);
+  border: 2px solid var(--border-color);
+  color: var(--border-color);
 }
 
 .outline:hover:not(:disabled):not([data-disabled]):not([data-loading]) {
-  background: var(--color-button-outline-surface-hover);
+  border-color: var(--border-color-hover);
+  background: var(--bg-color);
+  color: var(--text-color-hover);
 }
 
 .outline:active:not(:disabled):not([data-disabled]):not([data-loading]) {
-  background: var(--color-button-outline-surface-pressed);
+  border-color: var(--border-color-hover);
+  background: var(--bg-color);
+  color: var(--text-color-hover);
   opacity: 0.92;
 }
 
 .ghost {
+  border: none;
   background: transparent;
-  color: var(--color-button-ghost-label);
+  color: var(--bg-color);
 }
 
 .ghost:hover:not(:disabled):not([data-disabled]):not([data-loading]) {
-  background: var(--color-button-ghost-surface-hover);
+  background: var(--bg-color-hover);
+  color: var(--text-color-hover);
 }
 
 .ghost:active:not(:disabled):not([data-disabled]):not([data-loading]) {
-  background: var(--color-button-ghost-surface-pressed);
+  background: var(--bg-color-hover);
   opacity: 0.92;
+}
+
+.glass {
+  background: var(--bg-glass-color);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  color: var(--text-glass-color);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+}
+
+.glass:hover {
+  background: var(--bg-glass-color-hover);
+  color: var(--text-glass-color-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 40px 0 rgba(31, 38, 135, 0.5);
+}
+
+.glass:active:not(:disabled):not([data-disabled]):not([data-loading]) {
+  transform: translateY(0);
+  box-shadow: 0 4px 20px 0 rgba(31, 38, 135, 0.3);
+}
+
+.text {
+  background: transparent;
+  border: none;
+  color: var(--bg-color);
+}
+
+.text:hover {
+  color: color-mix(in srgb, var(--bg-color) 70%, transparent);
+}
+
+.text:active:not(:disabled):not([data-disabled]):not([data-loading]) {
+  color: color-mix(in srgb, var(--bg-color) 85%, transparent);
 }
 
 .button:disabled,
@@ -134,4 +193,122 @@
 .ghost[data-disabled],
 .ghost[data-loading] {
   color: var(--color-button-disabled-label);
+}
+
+.glass:disabled,
+.glass[data-disabled],
+.glass[data-loading] {
+  opacity: 0.5;
+}
+
+.text:disabled,
+.text[data-disabled],
+.text[data-loading] {
+  color: var(--color-button-disabled-label);
+}
+
+.button.success {
+  --bg-color: var(--color-surface-success-dark);
+  --bg-color-hover: color-mix(in srgb, var(--color-surface-success-dark) 80%, transparent);
+  --border-color: var(--color-border-success);
+  --border-color-hover: var(--color-border-success);
+  --bg-glass-color: color-mix(in srgb, var(--color-surface-success-dark) 6%, transparent);
+  --bg-glass-color-hover: color-mix(in srgb, var(--color-surface-success-dark) 11%, transparent);
+  --text-glass-color: var(--color-text-success);
+  --text-glass-color-hover: var(--color-text-success);
+}
+
+.button.info {
+  --bg-color: var(--color-surface-info-dark);
+  --bg-color-hover: color-mix(in srgb, var(--color-surface-info-dark) 80%, transparent);
+  --border-color: var(--color-border-info);
+  --border-color-hover: var(--color-border-info);
+  --bg-glass-color: color-mix(in srgb, var(--color-surface-info-dark) 6%, transparent);
+  --bg-glass-color-hover: color-mix(in srgb, var(--color-surface-info-dark) 11%, transparent);
+  --text-glass-color: var(--color-text-info);
+  --text-glass-color-hover: var(--color-text-info);
+}
+
+.button.warning {
+  --bg-color: var(--color-surface-warning-dark);
+  --bg-color-hover: color-mix(in srgb, var(--color-surface-warning-dark) 80%, transparent);
+  --border-color: var(--color-border-warning);
+  --border-color-hover: var(--color-border-warning);
+  --bg-glass-color: color-mix(in srgb, var(--color-surface-warning-dark) 6%, transparent);
+  --bg-glass-color-hover: color-mix(in srgb, var(--color-surface-warning-dark) 11%, transparent);
+  --text-glass-color: var(--color-text-warning);
+  --text-glass-color-hover: var(--color-text-warning);
+}
+
+.button.error {
+  --bg-color: var(--color-surface-error-dark);
+  --bg-color-hover: color-mix(in srgb, var(--color-surface-error-dark) 80%, transparent);
+  --border-color: var(--color-border-error);
+  --border-color-hover: var(--color-border-error);
+  --bg-glass-color: color-mix(in srgb, var(--color-surface-error-dark) 6%, transparent);
+  --bg-glass-color-hover: color-mix(in srgb, var(--color-surface-error-dark) 11%, transparent);
+  --text-glass-color: var(--color-text-error);
+  --text-glass-color-hover: var(--color-text-error);
+}
+
+.button.primary {
+  --bg-color: var(--color-surface-brand-primary-dark);
+  --bg-color-hover: color-mix(in srgb, var(--color-surface-brand-primary-dark) 80%, transparent);
+  --border-color: var(--color-border-brand-primary-dark);
+  --border-color-hover: var(--color-border-brand-primary-dark);
+  --bg-glass-color: color-mix(in srgb, var(--color-surface-brand-primary-dark) 12%, transparent);
+  --bg-glass-color-hover: color-mix(in srgb, var(--color-surface-brand-primary-dark) 22%, transparent);
+  --text-glass-color: var(--color-text-brand-primary-dark);
+  --text-glass-color-hover: var(--color-text-brand-primary-dark);
+}
+
+.button.secondary {
+  --bg-color: var(--color-surface-brand-secondary-dark);
+  --bg-color-hover: color-mix(in srgb, var(--color-surface-brand-secondary-dark) 80%, transparent);
+  --border-color: var(--color-border-brand-secondary-dark);
+  --border-color-hover: var(--color-border-brand-secondary-dark);
+  --bg-glass-color: color-mix(in srgb, var(--color-surface-brand-secondary-dark) 12%, transparent);
+  --bg-glass-color-hover: color-mix(in srgb, var(--color-surface-brand-secondary-dark) 22%, transparent);
+  --text-glass-color: var(--color-text-brand-secondary-dark);
+  --text-glass-color-hover: var(--color-text-brand-secondary-dark);
+}
+
+.button.accent {
+  --bg-color: var(--color-surface-accent-dark);
+  --bg-color-hover: color-mix(in srgb, var(--color-surface-accent-dark) 80%, transparent);
+  --border-color: var(--color-border-brand-accent-dark);
+  --border-color-hover: var(--color-border-brand-accent-dark);
+  --bg-glass-color: color-mix(in srgb, var(--color-surface-accent-dark) 12%, transparent);
+  --bg-glass-color-hover: color-mix(in srgb, var(--color-surface-accent-dark) 22%, transparent);
+  --text-glass-color: var(--color-text-brand-accent-dark);
+  --text-glass-color-hover: var(--color-text-brand-accent-dark);
+}
+
+.button.inverted {
+  --bg-color: var(--color-surface-primary);
+  --bg-color-hover: var(--color-surface-secondary);
+  --text-color: var(--color-text);
+  --text-color-hover: var(--color-text);
+  --border-color: var(--color-border-inverse);
+  --border-color-hover: var(--color-border-inverse);
+  --bg-glass-color: color-mix(in srgb, var(--color-surface-inverse-primary), 12%, transparent);
+  --bg-glass-color-hover: color-mix(in srgb, var(--color-surface-inverse-primary), 22%, transparent);
+  --text-glass-color: var(--color-text-inverse);
+  --text-glass-color-hover: var(--color-text-inverse);
+}
+
+.iconButton.small {
+  padding: var(--space-8);
+}
+
+.iconButton.medium {
+  padding: var(--space-12);
+}
+
+.iconButton.large {
+  padding: var(--space-16);
+}
+
+.iconButton.text:hover {
+  background: color-mix(in srgb, var(--color-surface-inverse-primary) 8%, transparent);
 }

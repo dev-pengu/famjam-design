@@ -7,16 +7,10 @@ const ChevronLeft = (props: SvgProps) => (
   <Svg
     width={24}
     height={24}
-    stroke='#222'
-    viewBox='0 0 24 24'
+    viewBox='0 -960 960 960'
     {...props}
   >
-    <Path
-      strokeLinecap='round'
-      strokeLinejoin='round'
-      strokeWidth={2}
-      d='m15 6-6 6 6 6'
-    />
+    <Path d='M560-240 320-480l240-240 56 56-184 184 184 184z' />
   </Svg>
 );
 export default ChevronLeft;

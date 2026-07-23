@@ -1,0 +1,107 @@
+/* ── Base skeleton ────────────────────────────────────────── */
+
+.skeleton {
+  display: block;
+  background: var(--color-surface-disabled);
+  position: relative;
+  overflow: hidden;
+
+  /* Sensible defaults when no explicit size is passed */
+  width: 100%;
+  height: 1.2em;
+}
+
+/* ── Variants ─────────────────────────────────────────────── */
+
+.skeleton.circular {
+  border-radius: 9999px;
+  /* Equal width/height expected from consumer;
+     fall back to a sensible square if not provided */
+  width: 2.5rem;
+  height: 2.5rem;
+}
+
+.skeleton.rectangular {
+  border-radius: 0;
+}
+
+.skeleton.rounded {
+  border-radius: var(--radius-8, 0.5rem);
+}
+
+.skeleton.text {
+  border-radius: var(--radius-4, 0.25rem);
+  /* Text skeletons use line-height-relative sizing by default */
+  height: 0.875em;
+  transform: scaleY(0.8);
+  transform-origin: center;
+  margin-bottom: 0.2em;
+}
+
+/* ── Wave animation ───────────────────────────────────────── */
+
+/*
+  The wave is a pseudo-element gradient that slides across.
+  Using a separate layer from the background means the base
+  color shows through at the edges naturally.
+*/
+.skeleton.animate::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  transform: translateX(-100%);
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    color-mix(in srgb, var(--color-surface-inverse-secondary) 40%, transparent) 50%,
+    transparent 100%
+  );
+  animation: wave 1.6s ease-in-out infinite;
+}
+
+@keyframes wave {
+  0% {
+    transform: translateX(-100%);
+  }
+  60% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+/*
+  Pause at 60% rather than 100% so there's a brief rest
+  between waves — matches Material-style skeleton behaviour.
+*/
+
+/* ── Text group (multi-line) ──────────────────────────────── */
+
+.textGroup {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8, 0.5rem);
+  width: 100%;
+}
+
+/* ── Child inference ──────────────────────────────────────── */
+
+.childWrapper {
+  position: relative;
+  display: inline-flex;
+}
+
+/* The real child is hidden but still takes up space for measurement */
+.childMeasure {
+  visibility: hidden;
+  display: block;
+}
+
+/* The skeleton overlays exactly on top of the measured child */
+.childOverlay {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}

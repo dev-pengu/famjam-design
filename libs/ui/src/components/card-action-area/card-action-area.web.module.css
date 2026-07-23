@@ -1,0 +1,43 @@
+.actionArea {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 100%;
+  border: none;
+  background: transparent;
+  text-align: left;
+  cursor: pointer;
+  text-decoration: none;
+  color: inherit;
+  padding: 0;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.actionArea:focus-visible {
+  outline: 2px solid var(--color-border-focus);
+  outline-offset: 2px;
+}
+
+.actionAreaDisabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.actionAreaOverlay {
+  position: absolute;
+  inset: 0;
+  background: var(--color-text-primary, #000);
+  opacity: 0;
+  transition: opacity 0.15s ease;
+  pointer-events: none;
+  border-radius: inherit;
+}
+
+.actionArea:hover:not(.actionAreaDisabled) .actionAreaOverlay {
+  opacity: 0.04;
+}
+
+.actionArea:active:not(.actionAreaDisabled) .actionAreaOverlay {
+  opacity: 0.08;
+}

@@ -1,23 +1,32 @@
-import { InputState } from "./input-base";
+import { InputState } from './input-base';
 
 export enum InputVariant {
-    Text = 'text',
-    Password = 'password',
-    TextArea = 'textarea'
+  Text = 'text',
+  Number = 'number',
+  Password = 'password',
+  TextArea = 'textarea',
 }
 
 export enum LabelVariant {
-    Primary = 'primary',
-    Float = 'float'
+  Primary = 'primary',
+  Float = 'float',
+}
+
+export enum InputSize {
+  Small = 'small',
+  Medium = 'medium',
+  Large = 'large',
 }
 
 export interface InputProps {
-    label?: string;
-    labelVariant?: LabelVariant;
-    variant?: InputVariant;
-    helperMessage?: string;
-    state?: InputState;
-    showCharacterCount?: boolean;
-    testID?: string;
-    required?: boolean;
+  label?: string;
+  labelVariant?: LabelVariant;
+  variant?: InputVariant;
+  inputSize?: InputSize;
+  helperMessage?: string;
+  state?: InputState;
+  showCharacterCount?: boolean;
+  testID?: string;
+  required?: boolean;
+  children?: React.ReactNode;
 }

@@ -7,16 +7,10 @@ const Remove = (props: SvgProps) => (
   <Svg
     width={24}
     height={24}
-    viewBox='0 0 24 24'
+    viewBox='0 -960 960 960'
     {...props}
   >
-    <Path
-      stroke='#000'
-      strokeLinecap='round'
-      strokeLinejoin='round'
-      strokeWidth={2}
-      d='M6 12h12'
-    />
+    <Path d='M200-440v-80h560v80z' />
   </Svg>
 );
 export default Remove;

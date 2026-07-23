@@ -1,0 +1,406 @@
+.backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: var(--z-index-modal-backdrop, 450);
+  background: color-mix(in srgb, var(--color-shadow-primary, #000) 48%, transparent);
+}
+
+.backdropIn {
+  animation: fadeIn var(--fade-duration, 250ms) ease forwards;
+}
+.backdropOut {
+  animation: fadeOut var(--fade-duration, 250ms) ease forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+.modal {
+  position: fixed;
+  z-index: var(--z-index-modal, 500);
+  display: flex;
+  flex-direction: column;
+  background: var(--color-surface-primary);
+  border-radius: var(--radius-8, 0.5rem);
+  box-shadow: 0 8px 32px color-mix(in srgb, var(--color-shadow-primary, #000) 24%, transparent);
+  outline: none;
+  overflow: hidden;
+
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-height: calc(100vh - 4rem);
+}
+
+.modal.small {
+  width: min(90vw, 24rem);
+}
+.modal.medium {
+  width: min(90vw, 40rem);
+}
+.modal.large {
+  width: min(90vw, 64rem);
+}
+
+.modal.fullScreen {
+  width: 100vw;
+  height: 100vh;
+  max-height: 100vh;
+  border-radius: 0;
+  top: 0;
+  left: 0;
+  transform: none;
+}
+
+.closeButton {
+  position: absolute;
+  top: var(--space-8, 0.5rem);
+  right: var(--space-8, 0.5rem);
+  z-index: 1;
+}
+
+.titleWrapper {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-height: 0;
+  overflow: hidden;
+}
+
+.title {
+  padding: var(--space-20, 1.25rem) var(--space-24, 1.5rem) var(--space-8, 0.5rem);
+  padding-right: var(--space-48, 3rem); /* room for close button */
+  font-family: var(--font-family-roboto), sans-serif;
+  font-size: var(--font-size-20, 1.25rem);
+  font-weight: var(--font-weight-medium, 500);
+  color: var(--color-text-primary);
+  flex-shrink: 0;
+}
+
+.content {
+  flex: 1;
+  overflow-y: auto;
+  padding: var(--space-8, 0.5rem) var(--space-24, 1.5rem);
+  color: var(--color-text-primary);
+  font-family: var(--font-family-roboto), sans-serif;
+  font-size: var(--font-size-16, 1rem);
+
+  /* Subtle scroll shadow to indicate overflow */
+  background:
+    linear-gradient(var(--color-surface-primary) 30%, transparent) top / 100% 1.5rem,
+    linear-gradient(transparent, var(--color-surface-primary) 70%) bottom / 100% 1.5rem,
+    radial-gradient(
+        farthest-side at 50% 0,
+        color-mix(in srgb, var(--color-shadow-primary) 12%, transparent),
+        transparent
+      )
+      top / 100% 0.5rem,
+    radial-gradient(
+        farthest-side at 50% 100%,
+        color-mix(in srgb, var(--color-shadow-primary) 12%, transparent),
+        transparent
+      )
+      bottom / 100% 0.5rem;
+  background-repeat: no-repeat;
+  background-attachment: local, local, scroll, scroll;
+}
+
+.contentText {
+  margin: 0;
+  color: var(--color-text-secondary);
+  font-size: var(--font-size-16, 1rem);
+  line-height: var(--size-24, 1.5rem);
+}
+
+.contentText + .contentText {
+  margin-top: var(--space-12, 0.75rem);
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-8, 0.5rem);
+  padding: var(--space-16, 1rem) var(--space-24, 1.5rem);
+  border-top: 1px solid var(--color-border-secondary);
+  flex-shrink: 0;
+}
+
+.actions-start {
+  justify-content: flex-start;
+}
+.actions-center {
+  justify-content: center;
+}
+.actions-end {
+  justify-content: flex-end;
+}
+.actions-space-between {
+  justify-content: space-between;
+}
+
+.slide-center.slideIn {
+  animation: slideInCenter var(--fade-duration, 250ms) cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+.slide-center.slideOut {
+  animation: slideOutCenter var(--fade-duration, 250ms) cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+.slide-top.slideIn {
+  animation: slideInTop var(--fade-duration, 250ms) cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+.slide-top.slideOut {
+  animation: slideOutTop var(--fade-duration, 250ms) cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+.slide-bottom.slideIn {
+  animation: slideInBottom var(--fade-duration, 250ms) cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+.slide-bottom.slideOut {
+  animation: slideOutBottom var(--fade-duration, 250ms) cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+.slide-left.slideIn {
+  animation: slideInLeft var(--fade-duration, 250ms) cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+.slide-left.slideOut {
+  animation: slideOutLeft var(--fade-duration, 250ms) cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+.slide-right.slideIn {
+  animation: slideInRight var(--fade-duration, 250ms) cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+.slide-right.slideOut {
+  animation: slideOutRight var(--fade-duration, 250ms) cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+/* Center — scale in/out */
+@keyframes slideInCenter {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+@keyframes slideOutCenter {
+  from {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.95);
+  }
+}
+
+/* Top */
+@keyframes slideInTop {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -100%);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
+}
+@keyframes slideOutTop {
+  from {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
+  to {
+    opacity: 0;
+    transform: translate(-50%, -100%);
+  }
+}
+
+/* Bottom */
+@keyframes slideInBottom {
+  from {
+    opacity: 0;
+    transform: translate(-50%, 0%);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
+}
+@keyframes slideOutBottom {
+  from {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
+  to {
+    opacity: 0;
+    transform: translate(-50%, 0%);
+  }
+}
+
+/* Left */
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translate(-100%, -50%);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
+}
+@keyframes slideOutLeft {
+  from {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
+  to {
+    opacity: 0;
+    transform: translate(-100%, -50%);
+  }
+}
+
+/* Right */
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translate(0%, -50%);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
+}
+@keyframes slideOutRight {
+  from {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
+  to {
+    opacity: 0;
+    transform: translate(0%, -50%);
+  }
+}
+
+/* Full screen overrides — no centering transform so slide from edges */
+.fullScreen.slide-top.slideIn {
+  animation: slideInTopFull var(--fade-duration, 250ms) cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+.fullScreen.slide-top.slideOut {
+  animation: slideOutTopFull var(--fade-duration, 250ms) cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+.fullScreen.slide-bottom.slideIn {
+  animation: slideInBottomFull var(--fade-duration, 250ms) cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+.fullScreen.slide-bottom.slideOut {
+  animation: slideOutBottomFull var(--fade-duration, 250ms) cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+.fullScreen.slide-left.slideIn {
+  animation: slideInLeftFull var(--fade-duration, 250ms) cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+.fullScreen.slide-left.slideOut {
+  animation: slideOutLeftFull var(--fade-duration, 250ms) cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+.fullScreen.slide-right.slideIn {
+  animation: slideInRightFull var(--fade-duration, 250ms) cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+.fullScreen.slide-right.slideOut {
+  animation: slideOutRightFull var(--fade-duration, 250ms) cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+@keyframes slideInTopFull {
+  from {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes slideOutTopFull {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+}
+@keyframes slideInBottomFull {
+  from {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes slideOutBottomFull {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+}
+@keyframes slideInLeftFull {
+  from {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@keyframes slideOutLeftFull {
+  from {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+}
+@keyframes slideInRightFull {
+  from {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@keyframes slideOutRightFull {
+  from {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+}

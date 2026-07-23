@@ -34,5 +34,5 @@ export default defineConfig({
       extensions: ['.web.tsx', '.native.tsx', '.web.ts', '.native.ts', '.tsx', '.ts', '.jsx', '.js', '.json'],
     },
   },
-  // plugins: [cssModules()],
+  plugins: [cssModules()],
 });

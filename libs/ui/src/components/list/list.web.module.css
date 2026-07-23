@@ -1,0 +1,181 @@
+/* ── List ─────────────────────────────────────────────────── */
+.list {
+  list-style: none;
+  margin: 0;
+  padding: 0.5rem 0;
+  position: relative;
+}
+
+.list.disablePadding {
+  padding: 0;
+}
+
+/* ── ListItem shared layout ───────────────────────────────── */
+.listItem,
+.listItemButton {
+  display: flex;
+  align-items: center;
+  position: relative;
+  padding: 0.5rem 1rem;
+  min-height: 3rem;
+  box-sizing: border-box;
+  color: var(--color-text-tertiary);
+  text-decoration: none;
+  width: 100%;
+}
+
+.listItem.align-start,
+.listItemButton.align-start {
+  align-items: flex-start;
+}
+
+.list.dense .listItem,
+.list.dense .listItemButton {
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+  min-height: 2.5rem;
+}
+
+.listItem.inset,
+.listItemButton.inset {
+  padding-left: 3.5rem;
+}
+
+.listItem.disableGutters,
+.listItemButton.disableGutters {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.listItem.selected,
+.listItemButton.selected {
+  background: color-mix(in srgb, var(--color-surface-brand-secondary-dark) 10%, transparent);
+  color: var(--color-text-brand-secondary-dark);
+}
+
+.listItem.disabled,
+.listItemButton.disabled {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+/* ── ListItemButton ───────────────────────────────────────── */
+.listItemButton {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  text-align: left;
+  transition: background 0.15s;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.listItemButton:hover:not(.disabled) {
+  background: color-mix(in srgb, var(--color-surface-inverse-secondary) 6%, transparent);
+}
+
+.listItemButton.selected:hover:not(.disabled) {
+  background: color-mix(in srgb, var(--color-surface-brand-secondary-dark) 16%, transparent);
+}
+
+.listItemButton:focus-visible {
+  outline: 2px solid var(--color-border-focus);
+  outline-offset: -2px;
+}
+
+/* ── ListItemIcon ─────────────────────────────────────────── */
+.listItemIcon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  min-width: 2.5rem;
+  color: var(--color-text-tertiary);
+}
+
+.listItemButton.selected .listItemIcon,
+.listItem.selected .listItemIcon {
+  color: var(--color-surface-brand-secondary-dark);
+}
+
+/* ── ListItemAvatar ───────────────────────────────────────── */
+.listItemAvatar {
+  display: inline-flex;
+  align-items: center;
+  flex-shrink: 0;
+  min-width: 2.5rem;
+}
+
+/* ── ListItemText ─────────────────────────────────────────── */
+.listItemText {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-width: 0;
+}
+
+.listItemText.inset {
+  padding-left: 2.5rem;
+}
+
+.primaryText {
+  line-height: 1.5;
+  color: inherit;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.secondaryText {
+  line-height: 1.4;
+  color: var(--color-text-tertiary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* ── ListDivider ──────────────────────────────────────────── */
+.listDivider {
+  height: 1px;
+  background: var(--color-border-primary);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.listDivider.inset {
+  margin-left: 3.5rem;
+}
+.listDivider.middle {
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+
+/* ── ListSubheader ────────────────────────────────────────── */
+.listSubheader {
+  display: flex;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  font-size: var(--font-size-10);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-text-tertiary);
+  list-style: none;
+  line-height: 2;
+}
+
+.listSubheader.inset {
+  padding-left: 3.5rem;
+}
+
+.listSubheader.disableGutters {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.listSubheader.sticky {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  background: var(--color-surface-primary);
+}

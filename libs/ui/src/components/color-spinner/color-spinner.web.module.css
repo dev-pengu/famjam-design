@@ -1,7 +1,7 @@
 .loader {
-  --size: var(--spinner-size, 18px);
-  --primary: var(--primary-color, var(--color-surface-brand-secondary-light));
-  --secondary: var(--secondary-color, var(--color-surface-accent-light));
+  --size: 18px;
+  --primary: var(--color-surface-brand-secondary-light);
+  --secondary: var(--color-surface-accent-light);
   width: var(--size);
   height: var(--size);
   border-radius: 50%;
@@ -12,6 +12,35 @@
   box-sizing: border-box;
   animation: rotation 1s linear infinite;
 }
+
+.loader.small {
+  --size: 24px;
+  border-width: 1px;
+}
+
+.loader.medium {
+  --size: 28px;
+  border-width: 2px;
+}
+
+.loader.large {
+  --size: 32px;
+}
+
+.loader.xlarge {
+  --size: 36px;
+}
+
+.loader.monotone {
+  --primary: var(--color-surface-inverse-secondary);
+  --secondary: var(--color-surface-inverse-tertiary);
+}
+
+.loader.dark {
+  --primary: var(--color-surface-brand-secondary-dark);
+  --secondary: var(--color-surface-accent-dark);
+}
+
 .loader::after,
 .loader::before {
   content: '';
@@ -31,6 +60,17 @@
   animation: rotationBack 0.5s linear infinite;
   transform-origin: center center;
 }
+
+.loader.small::after,
+.loader.small::before {
+  border-width: 1px;
+}
+
+.loader.medium::after,
+.loader.medium::before {
+  border-width: 2px;
+}
+
 .loader::before {
   width: calc(var(--size) / 1.5);
   height: calc(var(--size) / 1.5);

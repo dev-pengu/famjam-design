@@ -7,16 +7,10 @@ const Error = (props: SvgProps) => (
   <Svg
     width={24}
     height={24}
-    stroke='#222'
-    viewBox='0 0 24 24'
+    viewBox='0 -960 960 960'
     {...props}
   >
-    <Path
-      strokeLinecap='round'
-      strokeLinejoin='round'
-      strokeWidth={2}
-      d='M12 16h.01M12 8v4m0 9a9 9 0 1 0 0-18 9 9 0 0 0 0 18'
-    />
+    <Path d='M508.5-291.5Q520-303 520-320t-11.5-28.5T480-360t-28.5 11.5T440-320t11.5 28.5T480-280t28.5-11.5M440-440h80v-240h-80zm40 360q-83 0-156-31.5T197-197t-85.5-127T80-480t31.5-156T197-763t127-85.5T480-880t156 31.5T763-763t85.5 127T880-480t-31.5 156T763-197t-127 85.5T480-80m0-80q134 0 227-93t93-227-93-227-227-93-227 93-93 227 93 227 227 93m0-320' />
   </Svg>
 );
 export default Error;

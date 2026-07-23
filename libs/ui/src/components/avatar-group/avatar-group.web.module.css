@@ -1,0 +1,19 @@
+@import '../avatar/avatar.web.module.css';
+
+.group {
+  display: inline-flex;
+  align-items: center;
+}
+
+.groupItem {
+  box-sizing: content-box;
+}
+
+.overflow {
+  background: var(--color-surface-disabled);
+  color: var(--color-text-disabled);
+  border: 2px solid var(--color-border-primary);
+  box-sizing: content-box;
+  font-size: var(--font-size-12);
+  font-weight: var(--font-weight-semibold);
+}

@@ -7,15 +7,10 @@ const Menu = (props: SVGProps<SVGSVGElement>) => (
     xmlns='http://www.w3.org/2000/svg'
     width='1em'
     height='1em'
-    viewBox='0 0 24 24'
+    viewBox='0 -960 960 960'
     {...props}
   >
-    <g
-      fillRule='evenodd'
-      clipRule='evenodd'
-    >
-      <path d='M19.5 8.25h-15v-1.5h15zM19.5 12.75h-15v-1.5h15zM19.5 17.25h-15v-1.5h15z' />
-    </g>
+    <path d='M120-240v-80h720v80zm0-200v-80h720v80zm0-200v-80h720v80z' />
   </svg>
 );
 export default Menu;

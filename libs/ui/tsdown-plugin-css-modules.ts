@@ -1,6 +1,5 @@
 import type { Rolldown } from 'tsdown';
 import { posix as path } from 'node:path';
-import LightningCSS from 'unplugin-lightningcss/rolldown';
 
 const HASHED_CSS_FILE = /-[^/.-]+\.css$/;
 const HASHED_JS_FILE = /-[^/.-]+\.(?:m?js|cjs)$/;
@@ -58,21 +57,10 @@ function injectCssModules(outputOptions: Rolldown.NormalizedOutputOptions, bundl
  * @param options.lightningCSSOptions - Optional config to pass through to LightningCSS
  * @returns A single Rolldown plugin that provides support for CSS-modules with automatic injection
  */
-export function cssModules({
-  lightningCSSOptions,
-}: { lightningCSSOptions?: Parameters<typeof LightningCSS>[0] } = {}): Rolldown.Plugin {
-  const lightningCssPlugin = LightningCSS(lightningCSSOptions) as Rolldown.Plugin;
-
+export function cssModules(): Rolldown.Plugin {
   return {
-    ...lightningCssPlugin,
-    name: 'lightningcss-with-injected-extracted-css',
+    name: 'injected-extracted-css',
     generateBundle(outputOptions, bundle, isWrite) {
-      const generateBundleHook = lightningCssPlugin.generateBundle;
-      if (generateBundleHook) {
-        const handler = typeof generateBundleHook === 'function' ? generateBundleHook : generateBundleHook.handler;
-        handler.call(this, outputOptions, bundle, isWrite);
-      }
-
       injectCssModules(outputOptions, bundle);
     },
   };

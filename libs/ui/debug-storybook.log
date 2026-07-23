@@ -1,0 +1,35 @@
+[11:55:31.938] [INFO] storybook v10.4.6
+[11:55:33.681] [DEBUG] Getting package.json info for /Users/matt/git/famjam/famjam-design/package.json...
+[11:55:33.957] [INFO] Starting...
+[11:55:33.986] [WARN] unable to find package.json for @famjam/fonts
+[11:55:34.110] [DEBUG] Starting preview..
+[11:55:34.131] [DEBUG] Using tsconfig paths for react-docgen
+[11:55:34.134] [WARN] [43mVite[49m [33mwarning: `esbuild` option was specified by "vite:react-babel" plugin. This option is deprecated, please use `oxc` instead.[39m
+[11:55:34.136] [WARN] 🚨 Unable to index ./src/components/color-spinner/color-spinner.stories.tsx:
+  NoMetaError: CSF: missing default export /Users/matt/git/famjam/famjam-design/libs/ui/src/components/color-spinner/color-spinner.stories.tsx (line 1, col 0)
+
+More info: https://storybook.js.org/docs/writing-stories?ref=error#default-export
+    at CsfFile.parse (file:///Users/matt/git/famjam/famjam-design/node_modules/.pnpm/storybook@10.4.6_@testing-library+dom@10.4.1_@types+react@19.2.17_prettier@3.8.4_react-_5ecd9dbbee65e1ea65fd2957bfec03cf/node_modules/storybook/dist/_node-chunks/chunk-X45RZLRZ.js:456:13)
+    at Object.createIndex (file:///Users/matt/git/famjam/famjam-design/node_modules/.pnpm/storybook@10.4.6_@testing-library+dom@10.4.1_@types+react@19.2.17_prettier@3.8.4_react-_5ecd9dbbee65e1ea65fd2957bfec03cf/node_modules/storybook/dist/core-server/presets/common-preset.js:1656:154)
+    at async _StoryIndexGenerator.extractStories (file:///Users/matt/git/famjam/famjam-design/node_modules/.pnpm/storybook@10.4.6_@testing-library+dom@10.4.1_@types+react@19.2.17_prettier@3.8.4_react-_5ecd9dbbee65e1ea65fd2957bfec03cf/node_modules/storybook/dist/core-server/index.js:19293:23)
+    at async file:///Users/matt/git/famjam/famjam-design/node_modules/.pnpm/storybook@10.4.6_@testing-library+dom@10.4.1_@types+react@19.2.17_prettier@3.8.4_react-_5ecd9dbbee65e1ea65fd2957bfec03cf/node_modules/storybook/dist/core-server/index.js:19214:39
+    at async Promise.all (index 0)
+    at async Promise.all (index 0)
+    at async _StoryIndexGenerator.updateExtracted (file:///Users/matt/git/famjam/famjam-design/node_modules/.pnpm/storybook@10.4.6_@testing-library+dom@10.4.1_@types+react@19.2.17_prettier@3.8.4_react-_5ecd9dbbee65e1ea65fd2957bfec03cf/node_modules/storybook/dist/core-server/index.js:19202:5)
+    at async _StoryIndexGenerator.ensureExtracted (file:///Users/matt/git/famjam/famjam-design/node_modules/.pnpm/storybook@10.4.6_@testing-library+dom@10.4.1_@types+react@19.2.17_prettier@3.8.4_react-_5ecd9dbbee65e1ea65fd2957bfec03cf/node_modules/storybook/dist/core-server/index.js:19237:5)
+    at async _StoryIndexGenerator.initialize (file:///Users/matt/git/famjam/famjam-design/node_modules/.pnpm/storybook@10.4.6_@testing-library+dom@10.4.1_@types+react@19.2.17_prettier@3.8.4_react-_5ecd9dbbee65e1ea65fd2957bfec03cf/node_modules/storybook/dist/core-server/index.js:19198:5)
+    at async file:///Users/matt/git/famjam/famjam-design/node_modules/.pnpm/storybook@10.4.6_@testing-library+dom@10.4.1_@types+react@19.2.17_prettier@3.8.4_react-_5ecd9dbbee65e1ea65fd2957bfec03cf/node_modules/storybook/dist/core-server/presets/common-preset.js:1694:10
+[11:55:34.142] [ERROR] Failed to build the preview
+[11:55:34.147] [ERROR] Error: Unable to index ./src/components/color-spinner/color-spinner.stories.tsx
+    at _StoryIndexGenerator.getIndexAndStats (file:///Users/matt/git/famjam/famjam-design/node_modules/.pnpm/storybook@10.4.6_@testing-library+dom@10.4.1_@types+react@19.2.17_prettier@3.8.4_react-_5ecd9dbbee65e1ea65fd2957bfec03cf/node_modules/storybook/dist/core-server/index.js:19468:15)
+    at async _StoryIndexGenerator.getIndex (file:///Users/matt/git/famjam/famjam-design/node_modules/.pnpm/storybook@10.4.6_@testing-library+dom@10.4.1_@types+react@19.2.17_prettier@3.8.4_react-_5ecd9dbbee65e1ea65fd2957bfec03cf/node_modules/storybook/dist/core-server/index.js:19457:13)
+    at async BasicMinimalPluginContext.config (file:///Users/matt/git/famjam/famjam-design/node_modules/.pnpm/@storybook+builder-vite@10.4.6_esbuild@0.28.1_storybook@10.4.6_@testing-library+dom@10._fbdb2b105888d9abb6af6b2248ff9ead/node_modules/@storybook/builder-vite/dist/_node-chunks/chunk-KJIVQEGR.js:188:19)
+    at async runConfigHook (file:///Users/matt/git/famjam/famjam-design/node_modules/.pnpm/vite@8.0.16_@types+node@22.20.0_esbuild@0.28.1_jiti@2.4.2_terser@5.48.0_yaml@2.9.0/node_modules/vite/dist/node/chunks/node.js:35033:15)
+    at async resolveConfig (file:///Users/matt/git/famjam/famjam-design/node_modules/.pnpm/vite@8.0.16_@types+node@22.20.0_esbuild@0.28.1_jiti@2.4.2_terser@5.48.0_yaml@2.9.0/node_modules/vite/dist/node/chunks/node.js:34490:11)
+    at async _createServer (file:///Users/matt/git/famjam/famjam-design/node_modules/.pnpm/vite@8.0.16_@types+node@22.20.0_esbuild@0.28.1_jiti@2.4.2_terser@5.48.0_yaml@2.9.0/node_modules/vite/dist/node/chunks/node.js:26197:65)
+    at async Module.start (file:///Users/matt/git/famjam/famjam-design/node_modules/.pnpm/@storybook+builder-vite@10.4.6_esbuild@0.28.1_storybook@10.4.6_@testing-library+dom@10._fbdb2b105888d9abb6af6b2248ff9ead/node_modules/@storybook/builder-vite/dist/index.js:1606:17)
+    at async storybookDevServer (file:///Users/matt/git/famjam/famjam-design/node_modules/.pnpm/storybook@10.4.6_@testing-library+dom@10.4.1_@types+react@19.2.17_prettier@3.8.4_react-_5ecd9dbbee65e1ea65fd2957bfec03cf/node_modules/storybook/dist/core-server/index.js:11496:158)
+    at async buildOrThrow (file:///Users/matt/git/famjam/famjam-design/node_modules/.pnpm/storybook@10.4.6_@testing-library+dom@10.4.1_@types+react@19.2.17_prettier@3.8.4_react-_5ecd9dbbee65e1ea65fd2957bfec03cf/node_modules/storybook/dist/core-server/index.js:8205:12)
+    at async buildDevStandalone (file:///Users/matt/git/famjam/famjam-design/node_modules/.pnpm/storybook@10.4.6_@testing-library+dom@10.4.1_@types+react@19.2.17_prettier@3.8.4_react-_5ecd9dbbee65e1ea65fd2957bfec03cf/node_modules/storybook/dist/core-server/index.js:12057:41)
+[11:55:34.151] [WARN] Broken build, fix the error above.
+You may need to refresh the browser.

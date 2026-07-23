@@ -7,16 +7,10 @@ const Warning = (props: SVGProps<SVGSVGElement>) => (
     xmlns='http://www.w3.org/2000/svg'
     width='1em'
     height='1em'
-    viewBox='0 0 24 24'
+    viewBox='0 -960 960 960'
     {...props}
   >
-    <path
-      stroke='#000'
-      strokeLinecap='round'
-      strokeLinejoin='round'
-      strokeWidth={2}
-      d='M12 15h.01M12 12V9M4.982 19h14.036c1.543 0 2.505-1.674 1.727-3.008l-7.017-12.03c-.772-1.323-2.684-1.323-3.456 0l-7.017 12.03C2.477 17.326 3.438 19 4.982 19'
-    />
+    <path d='m40-120 440-760 440 760zm138-80h604L480-720zm330.5-51.5Q520-263 520-280t-11.5-28.5T480-320t-28.5 11.5T440-280t11.5 28.5T480-240t28.5-11.5M440-360h80v-200h-80zm40-100' />
   </svg>
 );
 export default Warning;

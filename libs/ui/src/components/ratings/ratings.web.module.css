@@ -1,0 +1,94 @@
+.rating {
+  display: inline-flex;
+  gap: var(--space-4);
+  width: fit-content;
+}
+
+.rating:focus-visible {
+  outline: 2px solid var(--color-border-focus);
+  outline-offset: 2px;
+  border-radius: 0.25rem;
+}
+
+.rating.disabled {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.rating:not(.readOnly):not(.disabled) {
+  cursor: pointer;
+}
+
+.rating.readOnly {
+  cursor: default;
+}
+
+.rating.small .starWrapper {
+  width: 1rem;
+  height: 1rem;
+}
+.rating.medium .starWrapper {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+.rating.large .starWrapper {
+  width: 2rem;
+  height: 2rem;
+}
+
+.starWrapper {
+  position: relative;
+  flex-shrink: 0;
+}
+
+.starEmpty {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  color: var(--color-surface-tertiary);
+}
+
+.starFillClip {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  height: 100%;
+}
+
+.starFilled {
+  position: absolute;
+  inset: 0;
+  width: var(--star-wrapper-width, 100%);
+  height: 100%;
+  color: var(--color-surface-accent-light);
+}
+
+.rating.small .starFilled {
+  width: 1rem;
+}
+.rating.medium .starFilled {
+  width: 1.5rem;
+}
+.rating.large .starFilled {
+  width: 2rem;
+}
+
+.count {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.countButton {
+  padding: 4px;
+  top: -4px;
+}
+
+.rating.small .countButton {
+  top: -8px;
+}
+
+.rating.large .countButton {
+  top: 0;
+}

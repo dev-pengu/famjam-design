@@ -1,11 +1,23 @@
-import { useId, useState, useCallback, useEffect, useMemo } from 'react';
+import {
+  useId,
+  useState,
+  useCallback,
+  useEffect,
+  useMemo,
+  Children,
+  isValidElement,
+  useRef,
+  cloneElement,
+} from 'react';
+import { useControlled } from '../../hooks';
 import styles from './input.web.module.css';
 import { cx } from '../../utils/cx';
-import { InputProps, InputVariant, LabelVariant } from './input.types';
+import { InputProps, InputSize, InputVariant, LabelVariant } from './input.types';
 import { TypographySize } from '../typography/typography.types';
 import { Typography } from '../typography/typography.web';
 import { InputState, helperPayloadMap } from './input-base';
 import { Icon } from '../icon/icon.web';
+import { InputAdornment, InputAdornmentProps } from '../input-adornment';
 
 const helperClassMap: Record<InputState, string | undefined> = {
   [InputState.Success]: styles.textSuccess,
@@ -27,6 +39,7 @@ export const Input = ({
   variant = InputVariant.Text,
   labelVariant = LabelVariant.Primary,
   state = InputState.Default,
+  inputSize = InputSize.Medium,
   defaultValue = '',
   label,
   helperMessage,
@@ -38,17 +51,38 @@ export const Input = ({
   onChange,
   onFocus,
   onBlur,
+  value: controlledValue,
+  children,
   ...props
 }: InputProps & React.InputHTMLAttributes<HTMLInputElement | HTMLTextAreaElement>) => {
   const helperId = useId();
   const inputId = useId();
-  const [isFocused, setIsFocused] = useState(false);
-  const [valueState, setValueState] = useState(defaultValue);
-
   const disabled = state === InputState.Disabled;
+  const inputRef = useRef<HTMLInputElement>(null);
+  const textareaRef = useRef<HTMLTextAreaElement>(null);
+  const [isFocused, setIsFocused] = useState(false);
+  const [value, setValue] = useControlled({
+    controlledValue,
+    defaultValue,
+    disabled,
+  });
+
+  const handleChange = useCallback(
+    (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+      setValue(e.target.value);
+      onChange?.(e);
+    },
+    [onChange, setValue],
+  );
+
   const isTextArea = variant === InputVariant.TextArea;
 
-  const isFloating = isFocused || !valueState;
+  const containsValue =
+    (typeof value === 'string' && value.length > 0) ||
+    (typeof value === 'number' && value !== undefined) ||
+    (Array.isArray(value) && value.length > 0);
+
+  const isFloating: boolean = isFocused || containsValue;
 
   const effectiveState: InputState = disabled
     ? InputState.Disabled
@@ -82,16 +116,6 @@ export const Input = ({
     [onBlur],
   );
 
-  const handleChange = useCallback(
-    (event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-      setValueState(event.target.value);
-      onChange?.(event);
-    },
-    [onChange, setValueState],
-  );
-
-  const Comp = isTextArea ? 'textarea' : 'input';
-
   const floatingLabelFragment = useMemo(
     () => (
       <>
@@ -101,26 +125,61 @@ export const Input = ({
     [label, required],
   );
 
+  const childrenArray = Children.toArray(children);
+
+  const startAdornment =
+    children &&
+    cloneElement(
+      childrenArray.find(
+        (child) =>
+          isValidElement<InputAdornmentProps>(child) &&
+          child.type === InputAdornment &&
+          child.props.position === 'start',
+      ) as React.ReactElement<InputAdornmentProps>,
+      { ownerRef: isTextArea ? textareaRef : inputRef },
+    );
+
+  const endAdornment =
+    children &&
+    cloneElement(
+      childrenArray.find(
+        (child) =>
+          isValidElement<InputAdornmentProps>(child) && child.type === InputAdornment && child.props.position === 'end',
+      ) as React.ReactElement<InputAdornmentProps>,
+      { ownerRef: isTextArea ? textareaRef : inputRef },
+    );
+
+  const commonInputProps = {
+    ...props,
+    id: inputId,
+    value,
+    disabled,
+    'aria-describedby': helperId,
+    'aria-invalid': effectiveState === InputState.Error,
+    'data-testid': testID,
+    className: isTextArea ? styles.textarea : styles.input,
+    maxLength,
+    placeholder: showFloatingLabel ? '' : props.placeholder,
+    onChange: handleChange,
+    onFocus: handleFocus,
+    onBlur: handleBlur,
+  };
+
   return (
-    <div className={cx(styles.wrapper, className)}>
+    <div className={cx(styles.wrapper, styles[inputSize], className)}>
       {showPrimaryLabel && (
         <label
           htmlFor={inputId}
           className={styles.labelRow}
         >
-          <Typography.Body
-            size={TypographySize.Large}
-            bold
-          >
-            {label}
-          </Typography.Body>
+          <Typography.Body>{label}</Typography.Body>
           {required && <span className={styles.labelRequired}>*</span>}
         </label>
       )}
       <fieldset
         className={cx(
           styles.inputContainer,
-          isTextArea ? styles.large : styles.field,
+          isTextArea ? styles.multiline : styles.field,
           containerClassMap[effectiveState],
           showFloatingLabel && isFloating && styles.inputContainerFloating,
         )}
@@ -146,22 +205,20 @@ export const Input = ({
             </label>
           </>
         )}
-        <Comp
-          {...props}
-          id={inputId}
-          value={valueState}
-          disabled={disabled}
-          aria-describedby={helperId}
-          aria-invalid={effectiveState === InputState.Error}
-          data-testid={testID}
-          className={isTextArea ? styles.textarea : styles.input}
-          type={isTextArea ? undefined : variant}
-          maxLength={maxLength}
-          placeholder={showFloatingLabel ? '' : props.placeholder}
-          onChange={handleChange}
-          onFocus={handleFocus}
-          onBlur={handleBlur}
-        />
+        {startAdornment}
+        {isTextArea ? (
+          <textarea
+            {...commonInputProps}
+            ref={textareaRef}
+          />
+        ) : (
+          <input
+            {...commonInputProps}
+            ref={inputRef}
+            type={variant}
+          />
+        )}
+        {endAdornment}
       </fieldset>
       {(showHelperLabel || showCharacterCount) && (
         <div
@@ -173,7 +230,7 @@ export const Input = ({
         >
           {showHelperLabel && (
             <Typography.Body
-              size={TypographySize.Medium}
+              size={TypographySize.Small}
               id={helperId}
               data-testid={testID}
               className={styles.helper}
@@ -193,7 +250,7 @@ export const Input = ({
               size={TypographySize.Small}
               muted
             >
-              {String(valueState).length}/{maxLength ?? 0}
+              {String(value).length}/{maxLength ?? 0}
             </Typography.Body>
           )}
         </div>

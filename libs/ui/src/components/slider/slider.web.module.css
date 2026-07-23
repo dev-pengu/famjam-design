@@ -1,0 +1,207 @@
+/* Root */
+.root {
+  display: inline-flex;
+  align-items: center;
+  position: relative;
+  cursor: pointer;
+  touch-action: none;
+  user-select: none;
+}
+
+.root.disabled {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+/* Orientation sizing */
+.root.horizontal {
+  width: 100%;
+  padding: 0.75rem 0;
+}
+
+.root.vertical {
+  flex-direction: column;
+  height: 12rem;
+  padding: 0 0.75rem;
+}
+
+/* Size — thumb and track thickness */
+.root.small {
+  --thumb-size: 0.75rem;
+  --track-size: 0.125rem;
+}
+.root.default {
+  --thumb-size: 1rem;
+  --track-size: 0.25rem;
+}
+
+/* Variants — brand color tokens */
+.root.primary {
+  --slider-color: var(--color-surface-brand-secondary-dark);
+}
+.root.secondary {
+  --slider-color: var(--color-surface-inverse-secondary);
+}
+.root.accent {
+  --slider-color: var(--color-surface-accent-dark);
+}
+.root.success {
+  --slider-color: var(--color-surface-success-dark);
+}
+.root.warning {
+  --slider-color: var(--color-surface-warning-dark);
+}
+.root.error {
+  --slider-color: var(--color-surface-error-dark);
+}
+
+/* Track */
+.track {
+  position: relative;
+  border-radius: 9999px;
+  background: var(--color-border-secondary);
+  flex-shrink: 0;
+}
+
+.root.horizontal .track {
+  width: 100%;
+  height: var(--track-size);
+}
+
+.root.vertical .track {
+  height: 100%;
+  width: var(--track-size);
+}
+
+/* Track fill */
+.trackFill {
+  position: absolute;
+  background: var(--slider-color);
+  border-radius: 9999px;
+}
+
+.root.horizontal .trackFill {
+  top: 0;
+  height: 100%;
+}
+
+.root.vertical .trackFill {
+  left: 0;
+  width: 100%;
+}
+
+/* Thumb */
+.thumb {
+  position: absolute;
+  width: var(--thumb-size);
+  height: var(--thumb-size);
+  background: var(--slider-color);
+  border-radius: 9999px;
+  border: 2px solid var(--color-surface-primary);
+  box-shadow: 0 1px 4px color-mix(in srgb, var(--color-shadow) 24%, transparent);
+  transform: translate(-50%, -50%);
+  transition:
+    box-shadow 0.15s,
+    transform 0.15s;
+  outline: none;
+  z-index: 1;
+}
+
+.root.vertical .thumb {
+  transform: translate(-50%, 50%);
+}
+
+.thumb:focus-visible {
+  box-shadow:
+    0 0 0 4px color-mix(in srgb, var(--slider-color) 24%, transparent),
+    0 1px 4px color-mix(in srgb, var(--color-shadow-primary) 24%, transparent);
+}
+
+.thumb:hover,
+.thumbActive {
+  transform: translate(-50%, -50%) scale(1.2);
+  box-shadow:
+    0 0 0 6px color-mix(in srgb, var(--slider-color) 16%, transparent),
+    0 1px 4px color-mix(in srgb, var(--color-shadow-primary) 24%, transparent);
+}
+
+.root.vertical .thumb:hover,
+.root.vertical .thumbActive {
+  transform: translate(-50%, 50%) scale(1.2);
+}
+
+/* Value label */
+.valueLabel {
+  position: absolute;
+  bottom: calc(100% + 0.5rem);
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--slider-color);
+  color: var(--color-text-inverse);
+  font-size: var(--font-size-10);
+  font-weight: var(--font-weight-semibold);
+  padding: 0.2rem 0.4rem;
+  border-radius: 0.25rem;
+  white-space: nowrap;
+  pointer-events: none;
+}
+
+.valueLabel::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 4px solid transparent;
+  border-top-color: var(--slider-color);
+}
+
+.root.vertical .valueLabel {
+  bottom: auto;
+  left: calc(100% + 0.5rem);
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.root.vertical .valueLabel::after {
+  top: 50%;
+  left: auto;
+  right: 100%;
+  transform: translateY(-50%);
+  border-top-color: transparent;
+  border-right-color: var(--slider-color);
+}
+
+/* Marks */
+.mark {
+  position: absolute;
+  border-radius: 9999px;
+  background: var(--color-border-primary);
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+
+.root.horizontal .mark {
+  top: 50%;
+  width: calc(var(--track-size) * 0.5);
+  height: calc(var(--track-size) * 3);
+}
+
+.root.vertical .mark {
+  transform: translate(-50%, 50%);
+  left: 50%;
+  height: calc(var(--track-size) * 0.5);
+  width: calc(var(--track-size) * 3);
+}
+
+.markActive {
+  background: var(--slider-color);
+}
+
+.markLabel {
+  position: absolute;
+  font-size: var(--font-size-10);
+  color: var(--color-text-tertiary);
+  white-space: nowrap;
+  pointer-events: none;
+}

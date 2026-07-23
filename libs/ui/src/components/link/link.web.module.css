@@ -1,4 +1,8 @@
 .link {
+  margin: 0;
+  font-family: var(--font-family-roboto), sans-serif;
+  font-style: normal;
+  letter-spacing: 0;
   text-decoration: underline;
   cursor: pointer;
   color: var(--color-text-link);
@@ -11,11 +15,33 @@
 }
 
 .link:focus-visible {
-    color: var(--color-text-brand-secondary-dark);
-    outline: 1px dashed var(--color-text-brand-accent);
-    outline-offset: 1px;
+  color: var(--color-text-brand-secondary-dark);
+  outline: 1px dashed var(--color-text-brand-accent);
+  outline-offset: 1px;
 }
 
 .link:active {
-    color: var(--color-text-brand-secondary-dark)
+  color: var(--color-text-brand-secondary-dark);
+}
+
+.link.underline-none,
+.link.underline-none:link,
+.link.underline-hover,
+.link.underline-hover:link {
+  text-decoration: none;
+}
+
+.link.underline-none:hover,
+.link.underline-none:active {
+  text-decoration: none;
+}
+
+.link.underline-hover:hover,
+.link.underline-hover:active {
+  text-decoration: underline;
+}
+
+.link.underline-none:visited,
+.link.underline-hover:visited {
+  text-decoration: none;
 }

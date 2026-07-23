@@ -42,6 +42,10 @@
       "$type": "number",
       "$value": 4
     },
+    "6": {
+      "$type": "number",
+      "$value": 6
+    },
     "8": {
       "$type": "number",
       "$value": 8
@@ -74,6 +78,10 @@
       "$type": "number",
       "$value": 48
     },
+    "56": {
+      "$type": "number",
+      "$value": 56
+    },
     "64": {
       "$type": "number",
       "$value": 64
@@ -87,6 +95,10 @@
     "4": {
       "$type": "number",
       "$value": 4
+    },
+    "6": {
+      "$type": "number",
+      "$value": 6
     },
     "8": {
       "$type": "number",
