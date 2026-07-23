@@ -1,6 +1,6 @@
 {
   "name": "@famjam/ui",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "type": "module",
   "main": "./dist/index.cjs",
   "module": "./dist/index.js",
@@ -594,9 +594,9 @@
     "unplugin-lightningcss": "*"
   },
   "dependencies": {
-    "@famjam/fonts": "0.0.2",
-    "@famjam/icons": "0.0.2",
-    "@famjam/tokens": "0.0.2",
+    "@famjam/fonts": "0.0.3",
+    "@famjam/icons": "0.0.3",
+    "@famjam/tokens": "0.0.3",
     "@radix-ui/primitive": "*",
     "@radix-ui/react-accessible-icon": "*",
     "@radix-ui/react-checkbox": "*",
