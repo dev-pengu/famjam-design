@@ -10,6 +10,7 @@
       "executor": "nx:run-commands",
       "outputs": ["{projectRoot}/dist"],
       "dependsOn": ["generate"],
+      "cache": true,
       "options": {
         "parallel": false,
         "commands": [
@@ -26,6 +27,13 @@
       "options": {
         "script": "generate"
       }
+    },
+    "generate-package-json": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "node scripts/generate-package-json.mjs tokens"
+      },
+      "dependsOn": ["build"]
     },
     "nx-release-publish": {
       "options": {

@@ -3,19 +3,13 @@
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "libs/fonts/src",
   "projectType": "library",
-  "release": {
-    "version": {
-      "manifestRootsToUpdate": ["dist/{projectRoot}"],
-      "currentVersionResolver": "git-tag",
-      "fallbackCurrentVersionResolver": "disk"
-    }
-  },
   "tags": [],
   "targets": {
     "build": {
       "executor": "nx:run-commands",
       "outputs": ["{projectRoot}/dist"],
       "dependsOn": ["bundle"],
+      "cache": true,
       "options": {
         "parallel": false,
         "commands": [
@@ -33,6 +27,13 @@
       "options": {
         "script": "build"
       }
+    },
+    "generate-package-json": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "node scripts/generate-package-json.mjs fonts"
+      },
+      "dependsOn": ["build"]
     },
     "test": {
       "executor": "@nx/jest:jest",

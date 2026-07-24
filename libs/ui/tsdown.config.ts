@@ -1,7 +1,6 @@
-/// <references types="node" />
+/// <reference types="node" />
 import { defineConfig } from 'tsdown';
 import { globSync } from 'node:fs';
-import { cssModules } from './tsdown-plugin-css-modules.ts';
 
 const entry = [
   'src/index.ts',
@@ -27,6 +26,7 @@ export default defineConfig({
   platform: 'neutral',
   format: ['cjs', 'esm'],
   deps: {
+    skipNodeModulesBundle: true,
     neverBundle: ['react', 'react-dom', 'react-native', '@famjam/tokens'],
   },
   inputOptions: {
@@ -34,5 +34,12 @@ export default defineConfig({
       extensions: ['.web.tsx', '.native.tsx', '.web.ts', '.native.ts', '.tsx', '.ts', '.jsx', '.js', '.json'],
     },
   },
-  plugins: [cssModules()],
+  css: {
+    splitting: true,
+    inject: true,
+    lightningcss: {
+      cssModules: true,
+    },
+  },
+  plugins: [],
 });

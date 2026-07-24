@@ -27,6 +27,13 @@
         "script": "build"
       }
     },
+    "generate-package-json": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "node scripts/generate-package-json.mjs ui"
+      },
+      "dependsOn": ["build"]
+    },
     "nx-release-publish": {
       "options": {
         "registry": "http://localhost:4873",

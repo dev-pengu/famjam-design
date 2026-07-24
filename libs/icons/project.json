@@ -10,6 +10,7 @@
       "executor": "nx:run-commands",
       "outputs": ["{projectRoot}/dist"],
       "dependsOn": ["bundle"],
+      "cache": true,
       "options": {
         "parallel": false,
         "commands": [
@@ -27,6 +28,13 @@
       "options": {
         "script": "build"
       }
+    },
+    "generate-package-json": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "node scripts/generate-package-json.mjs icons"
+      },
+      "dependsOn": ["build"]
     },
     "optimize": {
       "executor": "nx:run-script",

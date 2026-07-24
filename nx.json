@@ -88,9 +88,10 @@
       }
     },
     "version": {
-      "preVersionCommand": "npx nx run-many -t build",
+      "preVersionCommand": "npx nx run-many -t build && npx nx run-many -t generate-package-json",
       "conventionalCommits": true,
       "preserveLocalDependencyProtocols": false,
+      "manifestRootsToUpdate": ["dist/{projectRoot}"],
       "git": {
         "commit": true,
         "tag": true,
