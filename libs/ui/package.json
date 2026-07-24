@@ -582,6 +582,7 @@
     "@types/node": "*",
     "@types/react": "*",
     "@types/react-dom": "*",
+    "@vitejs/plugin-react": "*",
     "babel-preset-expo": "*",
     "eslint": "*",
     "eslint-plugin-testing-library": "*",
@@ -592,8 +593,7 @@
     "ts-jest": "*",
     "tsdown": "*",
     "typescript": "*",
-    "unplugin-lightningcss": "*",
-    "rollup-plugin-css-only": "*"
+    "vite": "*"
   },
   "dependencies": {
     "@famjam/fonts": "workspace:*",

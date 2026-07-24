@@ -57,6 +57,7 @@
     "@types/node": "^22.0.0",
     "@types/react": "^19.2.2",
     "@types/react-dom": "^19.2.2",
+    "@vitejs/plugin-react": "^6.0.4",
     "@vitest/coverage-v8": "~4.1.0",
     "ajv": "^8.0.0",
     "babel-preset-expo": "^55.0.11",
@@ -84,7 +85,8 @@
     "typescript": "~5.9.2",
     "typescript-eslint": "^8.40.0",
     "unplugin-lightningcss": "^0.4.5",
-    "verdaccio": "^6.3.2"
+    "verdaccio": "^6.3.2",
+    "vite": "^8.1.5"
   },
   "workspaces": [
     "packages/*",
