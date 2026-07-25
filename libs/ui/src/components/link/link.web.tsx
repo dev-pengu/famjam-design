@@ -1,12 +1,12 @@
 import React from 'react';
 import { useTheme } from '../theme-provider/theme-context';
-import { LinkProps, LinkUnderline } from './link.types';
+import { LinkProps, LinkUnderline, PolymorphicProps } from './link.types';
 import { TypographyScale, TypographySize } from '../typography/typography.types';
 import { cx } from '../../utils/cx';
 import styles from './link.web.module.css';
 import { getBoldClass, sizeClassMap } from '../typography/typography.web';
 
-export type WebLinkProps = LinkProps & React.AnchorHTMLAttributes<HTMLAnchorElement>;
+export type WebLinkProps<C extends React.ElementType = 'a'> = PolymorphicProps<C, LinkProps>;
 
 const underlineClassMap: Record<LinkUnderline, string | undefined> = {
   [LinkUnderline.Always]: styles['underline-always'],
@@ -14,23 +14,27 @@ const underlineClassMap: Record<LinkUnderline, string | undefined> = {
   [LinkUnderline.None]: styles['underline-none'],
 };
 
-export const Link = ({
+type LinkComponent = <C extends React.ElementType = 'a'>(props: WebLinkProps<C>) => React.ReactElement | null;
+
+export const Link: LinkComponent = ({
   children,
   variant = TypographyScale.Body,
   size = TypographySize.Medium,
   bold = false,
-  rel,
-  as: Comp = 'a',
+  as,
   underline = LinkUnderline.Always,
   className,
   testID,
-  target,
   ...props
-}: Readonly<WebLinkProps>) => {
+}) => {
   useTheme();
 
+  const Comp = (as ?? 'a') as React.ElementType;
+
   const resolvedRel =
-    target === '_blank' ? [...new Set(['noopener', 'noreferrer', ...(rel?.split(/\s+/) ?? [])])].join(' ') : rel;
+    props.target === '_blank'
+      ? [...new Set(['noopener', 'noreferrer', ...(props.rel?.split(/\s+/) ?? [])])].join(' ')
+      : props.rel;
 
   return (
     <Comp
@@ -43,8 +47,8 @@ export const Link = ({
         getBoldClass(variant, bold),
       )}
       data-testid={testID}
-      target={target}
-      {...props}
+      target={props.target}
+      {...(props as any)}
     >
       {children}
     </Comp>

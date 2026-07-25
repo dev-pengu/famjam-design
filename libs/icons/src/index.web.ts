@@ -54,6 +54,7 @@ import MoreHorizontal from './icons/MoreHorizontal.web';
 import MoreVertical from './icons/MoreVertical.web';
 import Notification from './icons/Notification.web';
 import Publish from './icons/Publish.web';
+import Refresh from './icons/Refresh.web';
 import Remove from './icons/Remove.web';
 import Reply from './icons/Reply.web';
 import Search from './icons/Search.web';
@@ -127,6 +128,7 @@ export const icons = {
   'more-vertical': MoreVertical,
   notification: Notification,
   publish: Publish,
+  refresh: Refresh,
   remove: Remove,
   reply: Reply,
   search: Search,

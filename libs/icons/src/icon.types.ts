@@ -55,6 +55,7 @@ export enum IconName {
   MoreVertical = 'more-vertical',
   Notification = 'notification',
   Publish = 'publish',
+  Refresh = 'refresh',
   Remove = 'remove',
   Reply = 'reply',
   Search = 'search',
