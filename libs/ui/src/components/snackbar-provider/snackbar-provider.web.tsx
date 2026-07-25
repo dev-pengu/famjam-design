@@ -42,7 +42,6 @@ export const SnackbarProvider = ({
         anchorOrigin={anchorOrigin}
         autoHideDuration={autoHideDuration}
       />
-      z
     </SnackbarContext.Provider>
   );
 };
