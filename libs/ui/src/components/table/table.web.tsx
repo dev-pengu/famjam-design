@@ -18,13 +18,13 @@ import {
 } from './table.types';
 import { getRowKey, getCellValue, applyLocalFilters, applyLocalSort, applyLocalPagination } from './table.utils';
 import { Collapse } from '../collapse/collapse.web';
-import { Dropdown, DropdownSize } from '../dropdown/dropdown.web';
+import { Select, SelectSize } from '../select/select.web';
 import styles from './table.web.module.css';
 import { Typography, TypographyTextSize } from '../typography';
 import { Input, InputSize } from '../input';
 import { Button, ButtonColor, ButtonShape, ButtonSize, ButtonVariant } from '../button';
 import { Chip } from '../chip';
-import { DropdownValueType } from '../dropdown';
+import { SelectValueType } from '../select';
 import { useControlled } from '../../hooks';
 
 export const TableContainer = ({ maxHeight, maxWidth, children, className }: TableContainerProps) => {
@@ -94,7 +94,7 @@ export const TablePagination = ({
   const start = total === 0 ? 0 : page * pageSize + 1;
   const end = Math.min((page + 1) * pageSize, total);
 
-  const handlePageSizeChange = (value: React.SetStateAction<DropdownValueType | DropdownValueType[] | undefined>) => {
+  const handlePageSizeChange = (value: React.SetStateAction<SelectValueType | SelectValueType[] | undefined>) => {
     if (typeof value === 'string') onChange({ page: 0, pageSize: Number.parseInt(value) });
     else if (typeof value === 'number') onChange({ page: 0, pageSize: value });
     else if (Array.isArray(value))
@@ -114,10 +114,10 @@ export const TablePagination = ({
         >
           Rows per page:{' '}
         </Typography.Body>
-        <Dropdown
+        <Select
           value={pageSize}
           onChange={handlePageSizeChange}
-          size={DropdownSize.Small}
+          size={SelectSize.Small}
           options={pageSizeOptions.map((size) => {
             return { label: size.toString(), value: size };
           })}
@@ -444,8 +444,8 @@ export const Table = <T extends Record<string, unknown>>({
               {filterOpen && (
                 <div className={styles.filterPanel}>
                   <div className={styles.filterRow}>
-                    <Dropdown
-                      size={DropdownSize.Small}
+                    <Select
+                      size={SelectSize.Small}
                       value={activeFilter.columnId}
                       onChange={(v) => setActiveFilter((p) => ({ ...p, columnId: v as string }))}
                       className={styles.filterSelect}
@@ -453,8 +453,8 @@ export const Table = <T extends Record<string, unknown>>({
                         return { value: c.id, label: typeof c.header === 'string' ? c.header : c.id };
                       })}
                     />
-                    <Dropdown
-                      size={DropdownSize.Small}
+                    <Select
+                      size={SelectSize.Small}
                       value={activeFilter.operator}
                       onChange={(v) => setActiveFilter((p) => ({ ...p, operator: v as FilterOperator }))}
                       className={styles.filterSelect}

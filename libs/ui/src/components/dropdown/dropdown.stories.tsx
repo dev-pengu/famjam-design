@@ -1,122 +1,99 @@
-import type { Meta, StoryObj } from '@storybook/react';
-import { useArgs } from '@storybook/client-api';
+import { Meta, StoryObj } from '@storybook/react';
 
-import { Dropdown } from './dropdown.web';
-import { DropdownSize, DropdownSelectionDisplay, DropdownValueType } from './dropdown.types';
-import { LabelVariant } from '../input';
-import { InputState } from '../input/input-base';
+import {
+  DropdownMenu,
+  DropdownMenuTrigger,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuCheckboxItem,
+  DropdownMenuRadioItem,
+  DropdownMenuLabel,
+  DropdownMenuSeparator,
+  DropdownMenuSub,
+  DropdownMenuSubTrigger,
+  DropdownMenuSubContent,
+  DropdownMenuRadioGroup,
+  DropdownMenuShortcut,
+} from './dropdown.web';
+import { Button } from '../button/button.web';
+import Typography from '../typography/typography.web';
 
 const meta = {
-  component: Dropdown,
-  argTypes: {
-    size: {
-      control: 'select',
-      options: Object.values(DropdownSize),
-    },
-    label: {
-      control: 'text',
-    },
-    helperMessage: {
-      control: 'text',
-    },
-    placeholder: {
-      control: 'text',
-    },
-    readOnly: {
-      control: 'boolean',
-    },
-    required: {
-      control: 'boolean',
-    },
-    multiple: {
-      control: 'boolean',
-    },
-    dropup: {
-      control: 'boolean',
-    },
-    selectionDisplay: {
-      control: 'select',
-      options: Object.values(DropdownSelectionDisplay),
-    },
-    labelVariant: {
-      control: 'select',
-      options: Object.values(LabelVariant),
-    },
-    state: {
-      control: 'select',
-      options: Object.values(InputState),
-    },
-  },
-  render: function Component(args) {
-    const [, setArgs] = useArgs();
-
-    const onValueChange = (value: React.SetStateAction<DropdownValueType | DropdownValueType[] | undefined>) => {
-      args.onChange?.(value);
-
-      setArgs({ value });
-    };
-
-    return (
-      <Dropdown
-        {...args}
-        onChange={onValueChange}
-      />
-    );
-  },
-} satisfies Meta<typeof Dropdown>;
+  component: DropdownMenu,
+} satisfies Meta<typeof DropdownMenu>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-const options = [
-  { label: 'Apple', value: 'apple' },
-  { label: 'Banana', value: 'banana' },
-  { label: 'Cherry', value: 'cherry', disabled: true },
-];
-
 export const Default: Story = {
   args: {
-    options: options,
-    value: 'banana',
-    onChange: (v) => {},
-    label: 'Fruit',
-    placeholder: 'Select a fruit',
-    helperMessage: 'Pick your favourite',
-    required: true,
+    children: [
+      <DropdownMenuTrigger asChild>
+        <Button>Open Menu</Button>
+      </DropdownMenuTrigger>,
+      <DropdownMenuContent>
+        <DropdownMenuItem>Item One</DropdownMenuItem>
+        <DropdownMenuItem>Item Two</DropdownMenuItem>
+        <DropdownMenuSeparator />
+        <DropdownMenuItem>
+          <Typography.Body as='span'>Item Three</Typography.Body>
+          <DropdownMenuShortcut>⌘+T</DropdownMenuShortcut>
+        </DropdownMenuItem>
+      </DropdownMenuContent>,
+    ],
   },
 };
 
-export const MultiChips: Story = {
+export const WithCheckboxItems: Story = {
   args: {
-    options: options,
-    value: ['apple', 'banana'],
-    onChange: (v) => {},
-    label: 'Fruits',
-    multiple: true,
-    selectionDisplay: DropdownSelectionDisplay.Chip,
+    children: [
+      <DropdownMenuTrigger asChild>
+        <Button>Open Menu</Button>
+      </DropdownMenuTrigger>,
+      <DropdownMenuContent>
+        <DropdownMenuCheckboxItem defaultChecked={true}>Option One</DropdownMenuCheckboxItem>
+        <DropdownMenuCheckboxItem defaultChecked={false}>Option Two</DropdownMenuCheckboxItem>
+      </DropdownMenuContent>,
+    ],
   },
 };
 
-export const MultiIcons: Story = {
+export const WithRadioItems: Story = {
   args: {
-    options: options,
-    value: ['apple', 'banana'],
-    onChange: (v) => {},
-    label: 'Fruits',
-    multiple: true,
-    selectionDisplay: DropdownSelectionDisplay.Icon,
+    children: [
+      <DropdownMenuTrigger asChild>
+        <Button>Open Menu</Button>
+      </DropdownMenuTrigger>,
+      <DropdownMenuContent>
+        <DropdownMenuLabel>Select an option</DropdownMenuLabel>
+        <DropdownMenuSeparator />
+        <DropdownMenuRadioGroup defaultValue={'one'}>
+          <DropdownMenuRadioItem value='one'>Option One</DropdownMenuRadioItem>
+          <DropdownMenuRadioItem value='two'>Option Two</DropdownMenuRadioItem>
+          <DropdownMenuRadioItem value='three'>Option Three</DropdownMenuRadioItem>
+        </DropdownMenuRadioGroup>
+      </DropdownMenuContent>,
+    ],
   },
 };
 
-export const Dropup: Story = {
+export const WithSubmenus: Story = {
   args: {
-    options: options,
-    value: 'banana',
-    onChange: (v) => {},
-    label: 'Fruit',
-    placeholder: 'Select a fruit',
-    helperMessage: 'Pick your favourite',
-    required: true,
-    dropup: true,
+    children: [
+      <DropdownMenuTrigger asChild>
+        <Button>Open Menu</Button>
+      </DropdownMenuTrigger>,
+      <DropdownMenuContent>
+        <DropdownMenuItem>Item One</DropdownMenuItem>
+        <DropdownMenuSub>
+          <DropdownMenuSubTrigger>More Options</DropdownMenuSubTrigger>
+          <DropdownMenuSubContent>
+            <DropdownMenuItem>Sub Item One</DropdownMenuItem>
+            <DropdownMenuItem>Sub Item Two</DropdownMenuItem>
+          </DropdownMenuSubContent>
+        </DropdownMenuSub>
+        <DropdownMenuItem>Item Three</DropdownMenuItem>
+      </DropdownMenuContent>,
+    ],
   },
 };

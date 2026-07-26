@@ -26,6 +26,7 @@ import ChevronsLeft from './icons/ChevronsLeft.native';
 import ChevronsRight from './icons/ChevronsRight.native';
 import Close from './icons/Close.native';
 import Delete from './icons/Delete.native';
+import DotFilled from './icons/DotFilled.native';
 import DoubleChevronLeft from './icons/DoubleChevronLeft.native';
 import DoubleChevronRight from './icons/DoubleChevronRight.native';
 import Download from './icons/Download.native';
@@ -100,6 +101,7 @@ export const icons = {
   'chevrons-right': ChevronsRight,
   close: Close,
   delete: Delete,
+  'dot-filled': DotFilled,
   'double-chevron-left': DoubleChevronLeft,
   'double-chevron-right': DoubleChevronRight,
   download: Download,

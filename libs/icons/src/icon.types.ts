@@ -27,6 +27,7 @@ export enum IconName {
   ChevronsRight = 'chevrons-right',
   Close = 'close',
   Delete = 'delete',
+  DotFilled = 'dot-filled',
   DoubleChevronLeft = 'double-chevron-left',
   DoubleChevronRight = 'double-chevron-right',
   Download = 'download',

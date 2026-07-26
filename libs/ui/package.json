@@ -441,6 +441,16 @@
       "require": "./dist/components/ratings/ratings.web.cjs",
       "default": "./dist/components/ratings/ratings.web.js"
     },
+    "./select": {
+      "react-native": {
+        "types": "./dist/components/select/select.native.d.ts",
+        "default": "./dist/components/select/select.native.js"
+      },
+      "types": "./dist/components/select/select.web.d.ts",
+      "import": "./dist/components/select/select.web.js",
+      "require": "./dist/components/select/select.web.cjs",
+      "default": "./dist/components/select/select.web.js"
+    },
     "./shuttle": {
       "react-native": {
         "types": "./dist/components/shuttle/shuttle.native.d.ts",
@@ -604,6 +614,7 @@
     "@radix-ui/react-checkbox": "^1.1.0",
     "@radix-ui/react-compose-refs": "^1.1.2",
     "@radix-ui/react-context": "^1.1.1",
+    "@radix-ui/react-dropdown-menu": "^2.1.24",
     "@radix-ui/react-presence": "^1.1.1",
     "@radix-ui/react-primitive": "^2.1.4",
     "@radix-ui/react-radio-group": "^1.4.1",
