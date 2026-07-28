@@ -127,27 +127,29 @@ export const Input = ({
 
   const childrenArray = Children.toArray(children);
 
-  const startAdornment =
+  const startAdornmentRaw =
     children &&
-    cloneElement(
-      childrenArray.find(
-        (child) =>
-          isValidElement<InputAdornmentProps>(child) &&
-          child.type === InputAdornment &&
-          child.props.position === 'start',
-      ) as React.ReactElement<InputAdornmentProps>,
-      { ownerRef: isTextArea ? textareaRef : inputRef },
-    );
+    (childrenArray.find(
+      (child) =>
+        isValidElement<InputAdornmentProps>(child) && child.type === InputAdornment && child.props.position === 'start',
+    ) as React.ReactElement<InputAdornmentProps>);
+  const startAdornment = startAdornmentRaw && (
+    <span className={styles.adornment}>
+      {cloneElement(startAdornmentRaw, { ownerRef: isTextArea ? textareaRef : inputRef })}
+    </span>
+  );
 
-  const endAdornment =
+  const endAdornmentRaw =
     children &&
-    cloneElement(
-      childrenArray.find(
-        (child) =>
-          isValidElement<InputAdornmentProps>(child) && child.type === InputAdornment && child.props.position === 'end',
-      ) as React.ReactElement<InputAdornmentProps>,
-      { ownerRef: isTextArea ? textareaRef : inputRef },
-    );
+    (childrenArray.find(
+      (child) =>
+        isValidElement<InputAdornmentProps>(child) && child.type === InputAdornment && child.props.position === 'end',
+    ) as React.ReactElement<InputAdornmentProps>);
+  const endAdornment = endAdornmentRaw && (
+    <span className={styles.adornment}>
+      {cloneElement(endAdornmentRaw, { ownerRef: isTextArea ? textareaRef : inputRef })}
+    </span>
+  );
 
   const commonInputProps = {
     ...props,
@@ -198,6 +200,7 @@ export const Input = ({
                 helperClassMap[effectiveState],
                 styles.floatLabel,
                 styles.label,
+                Boolean(startAdornment) && styles.floatLabelWithAdornment,
                 isFloating && styles.floatLabelFloating,
               )}
             >

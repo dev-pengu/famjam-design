@@ -159,6 +159,10 @@
     color 0.15s ease;
 }
 
+.floatLabel.floatLabelWithAdornment:not(.floatLabelFloating) {
+  left: var(--space-32);
+}
+
 .floatLabelFloating {
   top: 0;
   transform: translateY(-50%);
@@ -227,6 +231,10 @@
   align-items: center;
   gap: var(--space-4);
   color: inherit;
+}
+
+.adornment {
+  padding-left: var(--space-8);
 }
 
 .textSuccess {
