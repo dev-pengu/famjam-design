@@ -91,12 +91,12 @@
       "preVersionCommand": "npx nx run-many -t build && npx nx run-many -t generate-package-json",
       "conventionalCommits": true,
       "preserveLocalDependencyProtocols": false,
-      "manifestRootsToUpdate": ["dist/{projectRoot}"],
-      "git": {
-        "commit": true,
-        "tag": true,
-        "push": false
-      }
+      "manifestRootsToUpdate": ["{projectRoot}", "dist/{projectRoot}"]
+    },
+    "git": {
+      "commit": true,
+      "tag": true,
+      "push": false
     }
   },
   "targetDefaults": {
