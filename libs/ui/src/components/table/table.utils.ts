@@ -40,15 +40,10 @@ export const applyLocalFilters = <T>(
 
   return data.filter((row) =>
     filters.every((filter) => {
-      console.log(columns);
-      console.log(filter);
       const col = columns.find((c) => c.id === filter.columnId);
-      console.log('no column found');
       if (!col) return true;
-      console.log('found column');
       const value = String(getCellValue(row, col.accessor) ?? '');
       const ret = applyOperator(value, filter.operator, filter.value);
-      console.log(ret);
       return ret;
     }),
   );

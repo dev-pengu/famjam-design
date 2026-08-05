@@ -69,8 +69,10 @@
 .closeButton {
   position: absolute;
   top: var(--space-8, 0.5rem);
-  right: var(--space-8, 0.5rem);
+  right: var(--space-16, 0.5rem);
   z-index: 1;
+  width: 24px;
+  height: 24px;
 }
 
 .titleWrapper {

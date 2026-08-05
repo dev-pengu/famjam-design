@@ -44,7 +44,6 @@ const Toast = ({
   }, [onClose]);
 
   const handleClose = useCallback(() => {
-    console.log(`handleClose is being called for ${id}`);
     dismiss();
     setTimeout(() => onClose(id), 250);
   }, [id, dismiss]);

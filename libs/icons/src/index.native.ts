@@ -25,6 +25,7 @@ import ChevronUp from './icons/ChevronUp.native';
 import ChevronsLeft from './icons/ChevronsLeft.native';
 import ChevronsRight from './icons/ChevronsRight.native';
 import Close from './icons/Close.native';
+import Copy from './icons/Copy.native';
 import Delete from './icons/Delete.native';
 import DotFilled from './icons/DotFilled.native';
 import DoubleChevronLeft from './icons/DoubleChevronLeft.native';
@@ -33,6 +34,7 @@ import Download from './icons/Download.native';
 import Drafts from './icons/Drafts.native';
 import Dropdown from './icons/Dropdown.native';
 import Dropup from './icons/Dropup.native';
+import Edit from './icons/Edit.native';
 import EmptyStar from './icons/EmptyStar.native';
 import Error from './icons/Error.native';
 import EventList from './icons/EventList.native';
@@ -100,6 +102,7 @@ export const icons = {
   'chevrons-left': ChevronsLeft,
   'chevrons-right': ChevronsRight,
   close: Close,
+  copy: Copy,
   delete: Delete,
   'dot-filled': DotFilled,
   'double-chevron-left': DoubleChevronLeft,
@@ -108,6 +111,7 @@ export const icons = {
   drafts: Drafts,
   dropdown: Dropdown,
   dropup: Dropup,
+  edit: Edit,
   'empty-star': EmptyStar,
   error: Error,
   'event-list': EventList,

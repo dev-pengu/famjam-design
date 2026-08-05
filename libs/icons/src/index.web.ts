@@ -25,6 +25,7 @@ import ChevronUp from './icons/ChevronUp.web';
 import ChevronsLeft from './icons/ChevronsLeft.web';
 import ChevronsRight from './icons/ChevronsRight.web';
 import Close from './icons/Close.web';
+import Copy from './icons/Copy.web';
 import Delete from './icons/Delete.web';
 import DotFilled from './icons/DotFilled.web';
 import DoubleChevronLeft from './icons/DoubleChevronLeft.web';
@@ -33,6 +34,7 @@ import Download from './icons/Download.web';
 import Drafts from './icons/Drafts.web';
 import Dropdown from './icons/Dropdown.web';
 import Dropup from './icons/Dropup.web';
+import Edit from './icons/Edit.web';
 import EmptyStar from './icons/EmptyStar.web';
 import Error from './icons/Error.web';
 import EventList from './icons/EventList.web';
@@ -100,6 +102,7 @@ export const icons = {
   'chevrons-left': ChevronsLeft,
   'chevrons-right': ChevronsRight,
   close: Close,
+  copy: Copy,
   delete: Delete,
   'dot-filled': DotFilled,
   'double-chevron-left': DoubleChevronLeft,
@@ -108,6 +111,7 @@ export const icons = {
   drafts: Drafts,
   dropdown: Dropdown,
   dropup: Dropup,
+  edit: Edit,
   'empty-star': EmptyStar,
   error: Error,
   'event-list': EventList,

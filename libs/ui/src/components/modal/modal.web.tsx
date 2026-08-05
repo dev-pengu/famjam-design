@@ -98,20 +98,22 @@ export const Modal = ({
         {/* Close button sits in its own absolutely positioned slot
             so it doesn't affect the layout of ModalTitle */}
         {closeable && (
-          <Button
-            className={styles.closeButton}
-            onClick={onClose}
-            aria-label='Close modal'
-            variant={ButtonVariant.Text}
-            shape={ButtonShape.Square}
-            size={ButtonSize.Small}
-          >
-            <Icon
-              name={IconName.Close}
-              size={18}
-              decorative
-            />
-          </Button>
+          <div className={styles.closeButton}>
+            <Button
+              // className={styles.closeButton}
+              onClick={onClose}
+              aria-label='Close modal'
+              variant={ButtonVariant.Text}
+              shape={ButtonShape.Square}
+              size={ButtonSize.Small}
+            >
+              <Icon
+                name={IconName.Close}
+                size={18}
+                decorative
+              />
+            </Button>
+          </div>
         )}
 
         {/* Title gets the labelledby id injected via a wrapper */}
