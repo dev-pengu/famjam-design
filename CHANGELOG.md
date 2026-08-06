@@ -1,3 +1,13 @@
+## 0.0.14 (2026-08-06)
+
+### 🩹 Fixes
+
+- fix barrel export
+
+### ❤️ Thank You
+
+- Matt Lippelman
+
 ## 0.0.13 (2026-08-06)
 
 ### 🚀 Features
