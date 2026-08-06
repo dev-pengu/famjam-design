@@ -1,3 +1,13 @@
+## 0.0.15 (2026-08-06)
+
+### 🚀 Features
+
+- combined date-picker and time-picker into input component and fixed floating label with date/time inputs
+
+### ❤️ Thank You
+
+- Matt Lippelman
+
 ## 0.0.14 (2026-08-06)
 
 ### 🩹 Fixes
