@@ -1,0 +1,54 @@
+{
+  "color": {
+    "palette": {
+      "red": {
+        "$type": "color",
+        "$value": "#E53E3E"
+      },
+      "orange": {
+        "$type": "color",
+        "$value": "#ED8936"
+      },
+      "amber": {
+        "$type": "color",
+        "$value": "#F59E0B"
+      },
+      "yellow": {
+        "$type": "color",
+        "$value": "#EAB308"
+      },
+      "lime": {
+        "$type": "color",
+        "$value": "#84CC16"
+      },
+      "green": {
+        "$type": "color",
+        "$value": "#16A34A"
+      },
+      "teal": {
+        "$type": "color",
+        "$value": "#14B8A6"
+      },
+      "cyan": {
+        "$type": "color",
+        "$value": "#06B6D4"
+      },
+      "blue": {
+        "$type": "color",
+        "$value": "#3B82F6"
+      },
+      "indigo": {
+        "$type": "color",
+        "$value": "#6366F1"
+      },
+      "violet": {
+        "$type": "color",
+        "$value": "#8B5CF6"
+      },
+      "pink": {
+        "$type": "color",
+        "$value": "#EC4899"
+      }
+    }
+  }
+}

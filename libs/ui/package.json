@@ -291,6 +291,36 @@
       "require": "./dist/components/color-spinner/color-spinner.web.cjs",
       "default": "./dist/components/color-spinner/color-spinner.web.js"
     },
+    "./color-swatch-picker": {
+      "react-native": {
+        "types": "./dist/components/color-swatch-picker/color-swatch-picker.native.d.ts",
+        "default": "./dist/components/color-swatch-picker/color-swatch-picker.native.js"
+      },
+      "types": "./dist/components/color-swatch-picker/color-swatch-picker.web.d.ts",
+      "import": "./dist/components/color-swatch-picker/color-swatch-picker.web.js",
+      "require": "./dist/components/color-swatch-picker/color-swatch-picker.web.cjs",
+      "default": "./dist/components/color-swatch-picker/color-swatch-picker.web.js"
+    },
+    "./combobox": {
+      "react-native": {
+        "types": "./dist/components/combobox/combobox.native.d.ts",
+        "default": "./dist/components/combobox/combobox.native.js"
+      },
+      "types": "./dist/components/combobox/combobox.web.d.ts",
+      "import": "./dist/components/combobox/combobox.web.js",
+      "require": "./dist/components/combobox/combobox.web.cjs",
+      "default": "./dist/components/combobox/combobox.web.js"
+    },
+    "./date-picker": {
+      "react-native": {
+        "types": "./dist/components/date-picker/date-picker.native.d.ts",
+        "default": "./dist/components/date-picker/date-picker.native.js"
+      },
+      "types": "./dist/components/date-picker/date-picker.web.d.ts",
+      "import": "./dist/components/date-picker/date-picker.web.js",
+      "require": "./dist/components/date-picker/date-picker.web.cjs",
+      "default": "./dist/components/date-picker/date-picker.web.js"
+    },
     "./divider": {
       "react-native": {
         "types": "./dist/components/divider/divider.native.d.ts",
@@ -550,6 +580,16 @@
       "import": "./dist/components/theme-provider/theme-provider.web.js",
       "require": "./dist/components/theme-provider/theme-provider.web.cjs",
       "default": "./dist/components/theme-provider/theme-provider.web.js"
+    },
+    "./time-picker": {
+      "react-native": {
+        "types": "./dist/components/time-picker/time-picker.native.d.ts",
+        "default": "./dist/components/time-picker/time-picker.native.js"
+      },
+      "types": "./dist/components/time-picker/time-picker.web.d.ts",
+      "import": "./dist/components/time-picker/time-picker.web.js",
+      "require": "./dist/components/time-picker/time-picker.web.cjs",
+      "default": "./dist/components/time-picker/time-picker.web.js"
     },
     "./tooltip": {
       "react-native": {

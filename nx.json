@@ -91,7 +91,7 @@
       "preVersionCommand": "npx nx run-many -t build && npx nx run-many -t generate-package-json",
       "conventionalCommits": true,
       "preserveLocalDependencyProtocols": false,
-      "manifestRootsToUpdate": ["{projectRoot}", "dist/{projectRoot}"]
+      "manifestRootsToUpdate": ["dist/{projectRoot}"]
     },
     "git": {
       "commit": true,
