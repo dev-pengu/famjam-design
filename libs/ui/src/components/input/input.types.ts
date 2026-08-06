@@ -6,6 +6,8 @@ export enum InputVariant {
   Password = 'password',
   TextArea = 'textarea',
   Email = 'email',
+  Date = 'date',
+  Time = 'time'
 }
 
 export enum LabelVariant {

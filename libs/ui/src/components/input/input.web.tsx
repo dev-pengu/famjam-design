@@ -82,7 +82,8 @@ export const Input = ({
     (typeof value === 'number' && value !== undefined) ||
     (Array.isArray(value) && value.length > 0);
 
-  const isFloating: boolean = isFocused || containsValue;
+  const isFloating: boolean =
+    isFocused || containsValue || variant === InputVariant.Date || variant === InputVariant.Time;
 
   const effectiveState: InputState = disabled
     ? InputState.Disabled

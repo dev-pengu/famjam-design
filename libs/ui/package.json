@@ -311,16 +311,6 @@
       "require": "./dist/components/combobox/combobox.web.cjs",
       "default": "./dist/components/combobox/combobox.web.js"
     },
-    "./date-picker": {
-      "react-native": {
-        "types": "./dist/components/date-picker/date-picker.native.d.ts",
-        "default": "./dist/components/date-picker/date-picker.native.js"
-      },
-      "types": "./dist/components/date-picker/date-picker.web.d.ts",
-      "import": "./dist/components/date-picker/date-picker.web.js",
-      "require": "./dist/components/date-picker/date-picker.web.cjs",
-      "default": "./dist/components/date-picker/date-picker.web.js"
-    },
     "./divider": {
       "react-native": {
         "types": "./dist/components/divider/divider.native.d.ts",
@@ -580,16 +570,6 @@
       "import": "./dist/components/theme-provider/theme-provider.web.js",
       "require": "./dist/components/theme-provider/theme-provider.web.cjs",
       "default": "./dist/components/theme-provider/theme-provider.web.js"
-    },
-    "./time-picker": {
-      "react-native": {
-        "types": "./dist/components/time-picker/time-picker.native.d.ts",
-        "default": "./dist/components/time-picker/time-picker.native.js"
-      },
-      "types": "./dist/components/time-picker/time-picker.web.d.ts",
-      "import": "./dist/components/time-picker/time-picker.web.js",
-      "require": "./dist/components/time-picker/time-picker.web.cjs",
-      "default": "./dist/components/time-picker/time-picker.web.js"
     },
     "./tooltip": {
       "react-native": {
