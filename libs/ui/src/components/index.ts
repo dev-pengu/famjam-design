@@ -46,5 +46,6 @@ export * from './stepper';
 export * from './switch';
 export * from './table';
 export * from './theme-provider';
+export * from './toggle-group';
 export * from './tooltip';
 export * from './typography';

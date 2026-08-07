@@ -6,6 +6,7 @@ import AccountChild from './icons/AccountChild.native';
 import Account from './icons/Account.native';
 import AddBox from './icons/AddBox.native';
 import Add from './icons/Add.native';
+import Agenda from './icons/Agenda.native';
 import Apps from './icons/Apps.native';
 import ArrowDownCircle from './icons/ArrowDownCircle.native';
 import ArrowLeft from './icons/ArrowLeft.native';
@@ -13,7 +14,10 @@ import ArrowRight from './icons/ArrowRight.native';
 import ArrowUpCircle from './icons/ArrowUpCircle.native';
 import ArrowUpDownCircle from './icons/ArrowUpDownCircle.native';
 import Block from './icons/Block.native';
+import CalendarDayView from './icons/CalendarDayView.native';
 import CalendarMeal from './icons/CalendarMeal.native';
+import CalendarMonthView from './icons/CalendarMonthView.native';
+import CalendarWeekView from './icons/CalendarWeekView.native';
 import Calendar from './icons/Calendar.native';
 import Celebration from './icons/Celebration.native';
 import Chat from './icons/Chat.native';
@@ -37,6 +41,7 @@ import Dropup from './icons/Dropup.native';
 import Edit from './icons/Edit.native';
 import EmptyStar from './icons/EmptyStar.native';
 import Error from './icons/Error.native';
+import EventAdd from './icons/EventAdd.native';
 import EventList from './icons/EventList.native';
 import EventRepeat from './icons/EventRepeat.native';
 import FilterList from './icons/FilterList.native';
@@ -55,21 +60,25 @@ import Mail from './icons/Mail.native';
 import Menu from './icons/Menu.native';
 import MoreHorizontal from './icons/MoreHorizontal.native';
 import MoreVertical from './icons/MoreVertical.native';
+import NotificationAdd from './icons/NotificationAdd.native';
 import Notification from './icons/Notification.native';
 import Publish from './icons/Publish.native';
 import Refresh from './icons/Refresh.native';
 import Remove from './icons/Remove.native';
 import Reply from './icons/Reply.native';
+import School from './icons/School.native';
 import Search from './icons/Search.native';
 import Send from './icons/Send.native';
 import Settings from './icons/Settings.native';
 import Share from './icons/Share.native';
 import SocialFacebook from './icons/SocialFacebook.native';
 import SocialGoogle from './icons/SocialGoogle.native';
+import Sports from './icons/Sports.native';
 import Star from './icons/Star.native';
 import Stethoscope from './icons/Stethoscope.native';
 import ThumbsDown from './icons/ThumbsDown.native';
 import ThumbsUp from './icons/ThumbsUp.native';
+import Travel from './icons/Travel.native';
 import Upload from './icons/Upload.native';
 import User from './icons/User.native';
 import VisibilityOff from './icons/VisibilityOff.native';
@@ -83,6 +92,7 @@ export const icons = {
   account: Account,
   'add-box': AddBox,
   add: Add,
+  agenda: Agenda,
   apps: Apps,
   'arrow-down-circle': ArrowDownCircle,
   'arrow-left': ArrowLeft,
@@ -90,7 +100,10 @@ export const icons = {
   'arrow-up-circle': ArrowUpCircle,
   'arrow-up-down-circle': ArrowUpDownCircle,
   block: Block,
+  'calendar-day-view': CalendarDayView,
   'calendar-meal': CalendarMeal,
+  'calendar-month-view': CalendarMonthView,
+  'calendar-week-view': CalendarWeekView,
   calendar: Calendar,
   celebration: Celebration,
   chat: Chat,
@@ -114,6 +127,7 @@ export const icons = {
   edit: Edit,
   'empty-star': EmptyStar,
   error: Error,
+  'event-add': EventAdd,
   'event-list': EventList,
   'event-repeat': EventRepeat,
   'filter-list': FilterList,
@@ -132,21 +146,25 @@ export const icons = {
   menu: Menu,
   'more-horizontal': MoreHorizontal,
   'more-vertical': MoreVertical,
+  'notification-add': NotificationAdd,
   notification: Notification,
   publish: Publish,
   refresh: Refresh,
   remove: Remove,
   reply: Reply,
+  school: School,
   search: Search,
   send: Send,
   settings: Settings,
   share: Share,
   'social-facebook': SocialFacebook,
   'social-google': SocialGoogle,
+  sports: Sports,
   star: Star,
   stethoscope: Stethoscope,
   'thumbs-down': ThumbsDown,
   'thumbs-up': ThumbsUp,
+  travel: Travel,
   upload: Upload,
   user: User,
   'visibility-off': VisibilityOff,

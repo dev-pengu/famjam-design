@@ -35,6 +35,7 @@ export const AvatarGroup = ({
     >
       {visible.map((child, index) => (
         <div
+          key={index}
           className={styles.groupItem}
           style={{ marginLeft: index === 0 ? 0 : offset, zIndex: total - index }}
         >

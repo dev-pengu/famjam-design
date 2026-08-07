@@ -571,6 +571,16 @@
       "require": "./dist/components/theme-provider/theme-provider.web.cjs",
       "default": "./dist/components/theme-provider/theme-provider.web.js"
     },
+    "./toggle-group": {
+      "react-native": {
+        "types": "./dist/components/toggle-group/toggle-group.native.d.ts",
+        "default": "./dist/components/toggle-group/toggle-group.native.js"
+      },
+      "types": "./dist/components/toggle-group/toggle-group.web.d.ts",
+      "import": "./dist/components/toggle-group/toggle-group.web.js",
+      "require": "./dist/components/toggle-group/toggle-group.web.cjs",
+      "default": "./dist/components/toggle-group/toggle-group.web.js"
+    },
     "./tooltip": {
       "react-native": {
         "types": "./dist/components/tooltip/tooltip.native.d.ts",
@@ -640,6 +650,7 @@
     "@radix-ui/react-radio-group": "^1.4.1",
     "@radix-ui/react-roving-focus": "^1.1.0",
     "@radix-ui/react-slot": "^1.2.4",
+    "@radix-ui/react-toggle-group": "^1.1.19",
     "@radix-ui/react-use-callback-ref": "^1.1.0",
     "@radix-ui/react-use-controllable-state": "^1.1.0",
     "@radix-ui/react-use-effect-event": "^0.0.2",

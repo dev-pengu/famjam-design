@@ -6,6 +6,7 @@ import AccountChild from './icons/AccountChild.web';
 import Account from './icons/Account.web';
 import AddBox from './icons/AddBox.web';
 import Add from './icons/Add.web';
+import Agenda from './icons/Agenda.web';
 import Apps from './icons/Apps.web';
 import ArrowDownCircle from './icons/ArrowDownCircle.web';
 import ArrowLeft from './icons/ArrowLeft.web';
@@ -13,7 +14,10 @@ import ArrowRight from './icons/ArrowRight.web';
 import ArrowUpCircle from './icons/ArrowUpCircle.web';
 import ArrowUpDownCircle from './icons/ArrowUpDownCircle.web';
 import Block from './icons/Block.web';
+import CalendarDayView from './icons/CalendarDayView.web';
 import CalendarMeal from './icons/CalendarMeal.web';
+import CalendarMonthView from './icons/CalendarMonthView.web';
+import CalendarWeekView from './icons/CalendarWeekView.web';
 import Calendar from './icons/Calendar.web';
 import Celebration from './icons/Celebration.web';
 import Chat from './icons/Chat.web';
@@ -37,6 +41,7 @@ import Dropup from './icons/Dropup.web';
 import Edit from './icons/Edit.web';
 import EmptyStar from './icons/EmptyStar.web';
 import Error from './icons/Error.web';
+import EventAdd from './icons/EventAdd.web';
 import EventList from './icons/EventList.web';
 import EventRepeat from './icons/EventRepeat.web';
 import FilterList from './icons/FilterList.web';
@@ -55,21 +60,25 @@ import Mail from './icons/Mail.web';
 import Menu from './icons/Menu.web';
 import MoreHorizontal from './icons/MoreHorizontal.web';
 import MoreVertical from './icons/MoreVertical.web';
+import NotificationAdd from './icons/NotificationAdd.web';
 import Notification from './icons/Notification.web';
 import Publish from './icons/Publish.web';
 import Refresh from './icons/Refresh.web';
 import Remove from './icons/Remove.web';
 import Reply from './icons/Reply.web';
+import School from './icons/School.web';
 import Search from './icons/Search.web';
 import Send from './icons/Send.web';
 import Settings from './icons/Settings.web';
 import Share from './icons/Share.web';
 import SocialFacebook from './icons/SocialFacebook.web';
 import SocialGoogle from './icons/SocialGoogle.web';
+import Sports from './icons/Sports.web';
 import Star from './icons/Star.web';
 import Stethoscope from './icons/Stethoscope.web';
 import ThumbsDown from './icons/ThumbsDown.web';
 import ThumbsUp from './icons/ThumbsUp.web';
+import Travel from './icons/Travel.web';
 import Upload from './icons/Upload.web';
 import User from './icons/User.web';
 import VisibilityOff from './icons/VisibilityOff.web';
@@ -83,6 +92,7 @@ export const icons = {
   account: Account,
   'add-box': AddBox,
   add: Add,
+  agenda: Agenda,
   apps: Apps,
   'arrow-down-circle': ArrowDownCircle,
   'arrow-left': ArrowLeft,
@@ -90,7 +100,10 @@ export const icons = {
   'arrow-up-circle': ArrowUpCircle,
   'arrow-up-down-circle': ArrowUpDownCircle,
   block: Block,
+  'calendar-day-view': CalendarDayView,
   'calendar-meal': CalendarMeal,
+  'calendar-month-view': CalendarMonthView,
+  'calendar-week-view': CalendarWeekView,
   calendar: Calendar,
   celebration: Celebration,
   chat: Chat,
@@ -114,6 +127,7 @@ export const icons = {
   edit: Edit,
   'empty-star': EmptyStar,
   error: Error,
+  'event-add': EventAdd,
   'event-list': EventList,
   'event-repeat': EventRepeat,
   'filter-list': FilterList,
@@ -132,21 +146,25 @@ export const icons = {
   menu: Menu,
   'more-horizontal': MoreHorizontal,
   'more-vertical': MoreVertical,
+  'notification-add': NotificationAdd,
   notification: Notification,
   publish: Publish,
   refresh: Refresh,
   remove: Remove,
   reply: Reply,
+  school: School,
   search: Search,
   send: Send,
   settings: Settings,
   share: Share,
   'social-facebook': SocialFacebook,
   'social-google': SocialGoogle,
+  sports: Sports,
   star: Star,
   stethoscope: Stethoscope,
   'thumbs-down': ThumbsDown,
   'thumbs-up': ThumbsUp,
+  travel: Travel,
   upload: Upload,
   user: User,
   'visibility-off': VisibilityOff,
