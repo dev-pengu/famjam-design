@@ -1,3 +1,13 @@
+## 0.0.16 (2026-08-07)
+
+### 🚀 Features
+
+- add toggle-group and some more icons
+
+### ❤️ Thank You
+
+- Matt Lippelman
+
 ## 0.0.15 (2026-08-06)
 
 ### 🚀 Features
