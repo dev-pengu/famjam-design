@@ -1,3 +1,13 @@
+## 0.0.17 (2026-08-08)
+
+### 🚀 Features
+
+- add medical icon
+
+### ❤️ Thank You
+
+- Matt Lippelman
+
 ## 0.0.16 (2026-08-07)
 
 ### 🚀 Features
