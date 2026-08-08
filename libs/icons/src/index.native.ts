@@ -57,6 +57,7 @@ import LockOpen from './icons/LockOpen.native';
 import Lock from './icons/Lock.native';
 import Logout from './icons/Logout.native';
 import Mail from './icons/Mail.native';
+import Medical from './icons/Medical.native';
 import Menu from './icons/Menu.native';
 import MoreHorizontal from './icons/MoreHorizontal.native';
 import MoreVertical from './icons/MoreVertical.native';
@@ -143,6 +144,7 @@ export const icons = {
   lock: Lock,
   logout: Logout,
   mail: Mail,
+  medical: Medical,
   menu: Menu,
   'more-horizontal': MoreHorizontal,
   'more-vertical': MoreVertical,

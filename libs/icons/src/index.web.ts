@@ -57,6 +57,7 @@ import LockOpen from './icons/LockOpen.web';
 import Lock from './icons/Lock.web';
 import Logout from './icons/Logout.web';
 import Mail from './icons/Mail.web';
+import Medical from './icons/Medical.web';
 import Menu from './icons/Menu.web';
 import MoreHorizontal from './icons/MoreHorizontal.web';
 import MoreVertical from './icons/MoreVertical.web';
@@ -143,6 +144,7 @@ export const icons = {
   lock: Lock,
   logout: Logout,
   mail: Mail,
+  medical: Medical,
   menu: Menu,
   'more-horizontal': MoreHorizontal,
   'more-vertical': MoreVertical,

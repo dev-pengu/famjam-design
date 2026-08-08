@@ -58,6 +58,7 @@ export enum IconName {
   Lock = 'lock',
   Logout = 'logout',
   Mail = 'mail',
+  Medical = 'medical',
   Menu = 'menu',
   MoreHorizontal = 'more-horizontal',
   MoreVertical = 'more-vertical',
