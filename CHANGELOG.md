@@ -1,3 +1,13 @@
+## 0.0.18 (2026-08-28)
+
+### 🚀 Features
+
+- add icons for chores/rewards
+
+### ❤️ Thank You
+
+- Matt Lippelman
+
 ## 0.0.17 (2026-08-08)
 
 ### 🚀 Features
