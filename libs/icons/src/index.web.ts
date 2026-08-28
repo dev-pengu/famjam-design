@@ -28,9 +28,12 @@ import ChevronRight from './icons/ChevronRight.web';
 import ChevronUp from './icons/ChevronUp.web';
 import ChevronsLeft from './icons/ChevronsLeft.web';
 import ChevronsRight from './icons/ChevronsRight.web';
+import Cleaning from './icons/Cleaning.web';
 import Close from './icons/Close.web';
 import Copy from './icons/Copy.web';
+import Crown from './icons/Crown.web';
 import Delete from './icons/Delete.web';
+import Diamond from './icons/Diamond.web';
 import DotFilled from './icons/DotFilled.web';
 import DoubleChevronLeft from './icons/DoubleChevronLeft.web';
 import DoubleChevronRight from './icons/DoubleChevronRight.web';
@@ -44,6 +47,8 @@ import Error from './icons/Error.web';
 import EventAdd from './icons/EventAdd.web';
 import EventList from './icons/EventList.web';
 import EventRepeat from './icons/EventRepeat.web';
+import FavoriteFilled from './icons/FavoriteFilled.web';
+import Favorite from './icons/Favorite.web';
 import FilterList from './icons/FilterList.web';
 import Groups from './icons/Groups.web';
 import Help from './icons/Help.web';
@@ -64,9 +69,11 @@ import MoreVertical from './icons/MoreVertical.web';
 import NotificationAdd from './icons/NotificationAdd.web';
 import Notification from './icons/Notification.web';
 import Publish from './icons/Publish.web';
+import Redeem from './icons/Redeem.web';
 import Refresh from './icons/Refresh.web';
 import Remove from './icons/Remove.web';
 import Reply from './icons/Reply.web';
+import Savings from './icons/Savings.web';
 import School from './icons/School.web';
 import Search from './icons/Search.web';
 import Send from './icons/Send.web';
@@ -74,12 +81,14 @@ import Settings from './icons/Settings.web';
 import Share from './icons/Share.web';
 import SocialFacebook from './icons/SocialFacebook.web';
 import SocialGoogle from './icons/SocialGoogle.web';
+import SocialLeaderboard from './icons/SocialLeaderboard.web';
 import Sports from './icons/Sports.web';
 import Star from './icons/Star.web';
 import Stethoscope from './icons/Stethoscope.web';
 import ThumbsDown from './icons/ThumbsDown.web';
 import ThumbsUp from './icons/ThumbsUp.web';
 import Travel from './icons/Travel.web';
+import Trophy from './icons/Trophy.web';
 import Upload from './icons/Upload.web';
 import User from './icons/User.web';
 import VisibilityOff from './icons/VisibilityOff.web';
@@ -115,9 +124,12 @@ export const icons = {
   'chevron-up': ChevronUp,
   'chevrons-left': ChevronsLeft,
   'chevrons-right': ChevronsRight,
+  cleaning: Cleaning,
   close: Close,
   copy: Copy,
+  crown: Crown,
   delete: Delete,
+  diamond: Diamond,
   'dot-filled': DotFilled,
   'double-chevron-left': DoubleChevronLeft,
   'double-chevron-right': DoubleChevronRight,
@@ -131,6 +143,8 @@ export const icons = {
   'event-add': EventAdd,
   'event-list': EventList,
   'event-repeat': EventRepeat,
+  'favorite-filled': FavoriteFilled,
+  favorite: Favorite,
   'filter-list': FilterList,
   groups: Groups,
   help: Help,
@@ -151,9 +165,11 @@ export const icons = {
   'notification-add': NotificationAdd,
   notification: Notification,
   publish: Publish,
+  redeem: Redeem,
   refresh: Refresh,
   remove: Remove,
   reply: Reply,
+  savings: Savings,
   school: School,
   search: Search,
   send: Send,
@@ -161,12 +177,14 @@ export const icons = {
   share: Share,
   'social-facebook': SocialFacebook,
   'social-google': SocialGoogle,
+  'social-leaderboard': SocialLeaderboard,
   sports: Sports,
   star: Star,
   stethoscope: Stethoscope,
   'thumbs-down': ThumbsDown,
   'thumbs-up': ThumbsUp,
   travel: Travel,
+  trophy: Trophy,
   upload: Upload,
   user: User,
   'visibility-off': VisibilityOff,

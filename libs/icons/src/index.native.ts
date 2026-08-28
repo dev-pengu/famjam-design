@@ -28,9 +28,12 @@ import ChevronRight from './icons/ChevronRight.native';
 import ChevronUp from './icons/ChevronUp.native';
 import ChevronsLeft from './icons/ChevronsLeft.native';
 import ChevronsRight from './icons/ChevronsRight.native';
+import Cleaning from './icons/Cleaning.native';
 import Close from './icons/Close.native';
 import Copy from './icons/Copy.native';
+import Crown from './icons/Crown.native';
 import Delete from './icons/Delete.native';
+import Diamond from './icons/Diamond.native';
 import DotFilled from './icons/DotFilled.native';
 import DoubleChevronLeft from './icons/DoubleChevronLeft.native';
 import DoubleChevronRight from './icons/DoubleChevronRight.native';
@@ -44,6 +47,8 @@ import Error from './icons/Error.native';
 import EventAdd from './icons/EventAdd.native';
 import EventList from './icons/EventList.native';
 import EventRepeat from './icons/EventRepeat.native';
+import FavoriteFilled from './icons/FavoriteFilled.native';
+import Favorite from './icons/Favorite.native';
 import FilterList from './icons/FilterList.native';
 import Groups from './icons/Groups.native';
 import Help from './icons/Help.native';
@@ -64,9 +69,11 @@ import MoreVertical from './icons/MoreVertical.native';
 import NotificationAdd from './icons/NotificationAdd.native';
 import Notification from './icons/Notification.native';
 import Publish from './icons/Publish.native';
+import Redeem from './icons/Redeem.native';
 import Refresh from './icons/Refresh.native';
 import Remove from './icons/Remove.native';
 import Reply from './icons/Reply.native';
+import Savings from './icons/Savings.native';
 import School from './icons/School.native';
 import Search from './icons/Search.native';
 import Send from './icons/Send.native';
@@ -74,12 +81,14 @@ import Settings from './icons/Settings.native';
 import Share from './icons/Share.native';
 import SocialFacebook from './icons/SocialFacebook.native';
 import SocialGoogle from './icons/SocialGoogle.native';
+import SocialLeaderboard from './icons/SocialLeaderboard.native';
 import Sports from './icons/Sports.native';
 import Star from './icons/Star.native';
 import Stethoscope from './icons/Stethoscope.native';
 import ThumbsDown from './icons/ThumbsDown.native';
 import ThumbsUp from './icons/ThumbsUp.native';
 import Travel from './icons/Travel.native';
+import Trophy from './icons/Trophy.native';
 import Upload from './icons/Upload.native';
 import User from './icons/User.native';
 import VisibilityOff from './icons/VisibilityOff.native';
@@ -115,9 +124,12 @@ export const icons = {
   'chevron-up': ChevronUp,
   'chevrons-left': ChevronsLeft,
   'chevrons-right': ChevronsRight,
+  cleaning: Cleaning,
   close: Close,
   copy: Copy,
+  crown: Crown,
   delete: Delete,
+  diamond: Diamond,
   'dot-filled': DotFilled,
   'double-chevron-left': DoubleChevronLeft,
   'double-chevron-right': DoubleChevronRight,
@@ -131,6 +143,8 @@ export const icons = {
   'event-add': EventAdd,
   'event-list': EventList,
   'event-repeat': EventRepeat,
+  'favorite-filled': FavoriteFilled,
+  favorite: Favorite,
   'filter-list': FilterList,
   groups: Groups,
   help: Help,
@@ -151,9 +165,11 @@ export const icons = {
   'notification-add': NotificationAdd,
   notification: Notification,
   publish: Publish,
+  redeem: Redeem,
   refresh: Refresh,
   remove: Remove,
   reply: Reply,
+  savings: Savings,
   school: School,
   search: Search,
   send: Send,
@@ -161,12 +177,14 @@ export const icons = {
   share: Share,
   'social-facebook': SocialFacebook,
   'social-google': SocialGoogle,
+  'social-leaderboard': SocialLeaderboard,
   sports: Sports,
   star: Star,
   stethoscope: Stethoscope,
   'thumbs-down': ThumbsDown,
   'thumbs-up': ThumbsUp,
   travel: Travel,
+  trophy: Trophy,
   upload: Upload,
   user: User,
   'visibility-off': VisibilityOff,
