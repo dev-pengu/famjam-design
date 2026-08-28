@@ -1,3 +1,13 @@
+## 0.0.19 (2026-08-28)
+
+### 🚀 Features
+
+- added rounded inputs and fixed accordion open animation
+
+### ❤️ Thank You
+
+- Matt Lippelman
+
 ## 0.0.18 (2026-08-28)
 
 ### 🚀 Features
