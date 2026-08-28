@@ -77,6 +77,14 @@
     background-color 0.15s ease;
 }
 
+.triggerContainer.rounded {
+  border-radius: var(--radius-40);
+}
+
+.triggerContainer.square {
+  border-radius: var(--radius-4);
+}
+
 .trigger {
   display: flex;
   align-items: center;

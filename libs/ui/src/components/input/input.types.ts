@@ -7,7 +7,7 @@ export enum InputVariant {
   TextArea = 'textarea',
   Email = 'email',
   Date = 'date',
-  Time = 'time'
+  Time = 'time',
 }
 
 export enum LabelVariant {
@@ -21,11 +21,17 @@ export enum InputSize {
   Large = 'large',
 }
 
+export enum InputShape {
+  Rounded = 'rounded',
+  Square = 'square',
+}
+
 export interface InputProps {
   label?: string;
   labelVariant?: LabelVariant;
   variant?: InputVariant;
   inputSize?: InputSize;
+  shape?: InputShape;
   helperMessage?: string;
   state?: InputState;
   showCharacterCount?: boolean;

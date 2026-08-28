@@ -3,7 +3,7 @@ import { useArgs } from '@storybook/client-api';
 
 import { Combobox } from './combobox.web';
 import { ComboboxSize } from './combobox.types';
-import { LabelVariant } from '../input';
+import { InputShape, LabelVariant } from '../input';
 import { InputState } from '../input/input-base';
 
 const meta = {
@@ -38,6 +38,10 @@ const meta = {
     state: {
       control: 'select',
       options: Object.values(InputState),
+    },
+    shape: {
+      control: 'select',
+      options: Object.values(InputShape),
     },
   },
   render: function Component(args) {

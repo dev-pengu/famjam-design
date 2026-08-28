@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { useArgs } from '@storybook/client-api';
 
 import { Input } from './input.web';
-import { LabelVariant, InputVariant, InputSize } from './input.types';
+import { LabelVariant, InputVariant, InputSize, InputShape } from './input.types';
 import { InputState } from './input-base';
 import { InputAdornment } from '../input-adornment/input-adornment.web';
 import { Icon } from '../icon/icon.web';
@@ -30,6 +30,10 @@ const meta = {
     inputSize: {
       control: 'select',
       options: Object.values(InputSize),
+    },
+    shape: {
+      control: 'select',
+      options: Object.values(InputShape),
     },
     value: {
       control: 'object',

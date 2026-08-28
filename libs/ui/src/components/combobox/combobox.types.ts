@@ -1,4 +1,4 @@
-import { LabelVariant } from '../input';
+import { LabelVariant, InputShape } from '../input';
 import { InputState } from '../input/input-base';
 
 export enum ComboboxSize {
@@ -23,6 +23,7 @@ export type ComboboxProps = {
   labelVariant?: LabelVariant;
   helperMessage?: string;
   state?: InputState;
+  shape?: InputShape;
   placeholder?: string;
   noOptionsMessage?: string;
   readOnly?: boolean;

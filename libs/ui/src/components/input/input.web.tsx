@@ -12,7 +12,7 @@ import {
 import { useControlled } from '../../hooks';
 import styles from './input.web.module.css';
 import { cx } from '../../utils/cx';
-import { InputProps, InputSize, InputVariant, LabelVariant } from './input.types';
+import { InputProps, InputShape, InputSize, InputVariant, LabelVariant } from './input.types';
 import { TypographySize } from '../typography/typography.types';
 import { Typography } from '../typography/typography.web';
 import { InputState, helperPayloadMap } from './input-base';
@@ -40,6 +40,7 @@ export const Input = ({
   labelVariant = LabelVariant.Primary,
   state = InputState.Default,
   inputSize = InputSize.Medium,
+  shape = InputShape.Square,
   defaultValue = '',
   label,
   helperMessage,
@@ -182,6 +183,7 @@ export const Input = ({
       <fieldset
         className={cx(
           styles.inputContainer,
+          styles[shape],
           isTextArea ? styles.multiline : styles.field,
           containerClassMap[effectiveState],
           showFloatingLabel && isFloating && styles.inputContainerFloating,

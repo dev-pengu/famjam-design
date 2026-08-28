@@ -1,4 +1,4 @@
-import { LabelVariant } from '../input';
+import { LabelVariant, InputShape } from '../input';
 import { InputState } from '../input/input-base';
 
 export enum SelectSize {
@@ -31,6 +31,7 @@ export type SelectProps = {
   labelVariant?: LabelVariant;
   helperMessage?: string;
   state?: InputState;
+  shape?: InputShape;
   placeholder?: string;
   readOnly?: boolean;
   required?: boolean;

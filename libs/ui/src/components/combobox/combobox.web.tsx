@@ -7,7 +7,7 @@ import { cx } from '../../utils/cx';
 import { ComboboxProps, ComboboxSize, ComboboxOption } from './combobox.types';
 import styles from './combobox.web.module.css';
 import { Typography, TypographySize } from '../typography';
-import { LabelVariant } from '../input';
+import { InputShape, LabelVariant } from '../input';
 import { helperPayloadMap, InputState } from '../input/input-base';
 
 export { ComboboxSize };
@@ -38,6 +38,7 @@ export const Combobox = ({
   labelVariant = LabelVariant.Primary,
   helperMessage: helperText,
   state = InputState.Default,
+  shape = InputShape.Square,
   placeholder,
   noOptionsMessage = 'No options found',
   readOnly = false,
@@ -97,7 +98,6 @@ export const Combobox = ({
     if (option.disabled) return;
     setValue(option.value);
     closeList();
-    inputRef.current?.focus();
   };
 
   const handleInputChange = (event: ChangeEvent<HTMLInputElement>) => {
@@ -196,6 +196,7 @@ export const Combobox = ({
       <fieldset
         className={cx(
           styles.triggerContainer,
+          styles[shape],
           showFloatingLabel && isFloating && styles.triggerContainerFloating,
           containerClassMap[effectiveState],
         )}

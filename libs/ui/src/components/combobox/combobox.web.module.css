@@ -63,7 +63,6 @@
   position: relative;
   width: 100%;
   box-sizing: border-box;
-  border-radius: var(--radius-4);
   display: flex;
   align-items: center;
   margin: 0;
@@ -75,6 +74,14 @@
   transition:
     border-color 0.15s ease,
     background-color 0.15s ease;
+}
+
+.triggerContainer.rounded {
+  border-radius: var(--radius-40);
+}
+
+.triggerContainer.square {
+  border-radius: var(--radius-4);
 }
 
 .trigger {

@@ -8,7 +8,7 @@ import { cx } from '../../utils/cx';
 import { SelectProps, SelectSize, SelectSelectionDisplay, SelectOption } from './select.types';
 import styles from './select.web.module.css';
 import { Typography, TypographySize, TypographyTextSize } from '../typography';
-import { LabelVariant } from '../input';
+import { InputShape, LabelVariant } from '../input';
 import { helperPayloadMap, InputState } from '../input/input-base';
 
 export { SelectSize, SelectSelectionDisplay };
@@ -39,6 +39,7 @@ export const Select = ({
   labelVariant = LabelVariant.Primary,
   helperMessage: helperText,
   state = InputState.Default,
+  shape = InputShape.Square,
   placeholder,
   readOnly = false,
   required = false,
@@ -221,6 +222,7 @@ export const Select = ({
       <fieldset
         className={cx(
           styles.triggerContainer,
+          styles[shape],
           showFloatingLabel && isFloating && styles.triggerContainerFloating,
           containerClassMap[effectiveState],
         )}

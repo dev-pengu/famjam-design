@@ -55,7 +55,6 @@
   position: relative;
   width: 100%;
   box-sizing: border-box;
-  border-radius: var(--radius-4);
   display: flex;
   align-items: center;
   background: var(--color-surface-primary);
@@ -65,6 +64,14 @@
   transition:
     border-color 0.15s ease,
     background-color 0.15s ease;
+}
+
+.inputContainer.rounded {
+  border-radius: var(--radius-40);
+}
+
+.inputContainer.square {
+  border-radius: var(--radius-4);
 }
 
 .multiline {
