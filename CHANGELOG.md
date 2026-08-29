@@ -1,3 +1,13 @@
+## 0.0.20 (2026-08-29)
+
+### 🚀 Features
+
+- add sort icon
+
+### ❤️ Thank You
+
+- Matt Lippelman
+
 ## 0.0.19 (2026-08-28)
 
 ### 🚀 Features
