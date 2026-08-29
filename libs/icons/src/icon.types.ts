@@ -83,6 +83,7 @@ export enum IconName {
   SocialFacebook = 'social-facebook',
   SocialGoogle = 'social-google',
   SocialLeaderboard = 'social-leaderboard',
+  Sort = 'sort',
   Sports = 'sports',
   Star = 'star',
   Stethoscope = 'stethoscope',

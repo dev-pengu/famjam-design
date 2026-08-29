@@ -82,6 +82,7 @@ import Share from './icons/Share.native';
 import SocialFacebook from './icons/SocialFacebook.native';
 import SocialGoogle from './icons/SocialGoogle.native';
 import SocialLeaderboard from './icons/SocialLeaderboard.native';
+import Sort from './icons/Sort.native';
 import Sports from './icons/Sports.native';
 import Star from './icons/Star.native';
 import Stethoscope from './icons/Stethoscope.native';
@@ -178,6 +179,7 @@ export const icons = {
   'social-facebook': SocialFacebook,
   'social-google': SocialGoogle,
   'social-leaderboard': SocialLeaderboard,
+  sort: Sort,
   sports: Sports,
   star: Star,
   stethoscope: Stethoscope,

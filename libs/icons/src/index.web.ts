@@ -82,6 +82,7 @@ import Share from './icons/Share.web';
 import SocialFacebook from './icons/SocialFacebook.web';
 import SocialGoogle from './icons/SocialGoogle.web';
 import SocialLeaderboard from './icons/SocialLeaderboard.web';
+import Sort from './icons/Sort.web';
 import Sports from './icons/Sports.web';
 import Star from './icons/Star.web';
 import Stethoscope from './icons/Stethoscope.web';
@@ -178,6 +179,7 @@ export const icons = {
   'social-facebook': SocialFacebook,
   'social-google': SocialGoogle,
   'social-leaderboard': SocialLeaderboard,
+  sort: Sort,
   sports: Sports,
   star: Star,
   stethoscope: Stethoscope,
