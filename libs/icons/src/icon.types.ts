@@ -69,6 +69,7 @@ export enum IconName {
   MoreVertical = 'more-vertical',
   NotificationAdd = 'notification-add',
   Notification = 'notification',
+  PageInfo = 'page-info',
   Publish = 'publish',
   Redeem = 'redeem',
   Refresh = 'refresh',

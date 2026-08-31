@@ -68,6 +68,7 @@ import MoreHorizontal from './icons/MoreHorizontal.native';
 import MoreVertical from './icons/MoreVertical.native';
 import NotificationAdd from './icons/NotificationAdd.native';
 import Notification from './icons/Notification.native';
+import PageInfo from './icons/PageInfo.native';
 import Publish from './icons/Publish.native';
 import Redeem from './icons/Redeem.native';
 import Refresh from './icons/Refresh.native';
@@ -165,6 +166,7 @@ export const icons = {
   'more-vertical': MoreVertical,
   'notification-add': NotificationAdd,
   notification: Notification,
+  'page-info': PageInfo,
   publish: Publish,
   redeem: Redeem,
   refresh: Refresh,

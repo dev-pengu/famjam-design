@@ -68,6 +68,7 @@ import MoreHorizontal from './icons/MoreHorizontal.web';
 import MoreVertical from './icons/MoreVertical.web';
 import NotificationAdd from './icons/NotificationAdd.web';
 import Notification from './icons/Notification.web';
+import PageInfo from './icons/PageInfo.web';
 import Publish from './icons/Publish.web';
 import Redeem from './icons/Redeem.web';
 import Refresh from './icons/Refresh.web';
@@ -165,6 +166,7 @@ export const icons = {
   'more-vertical': MoreVertical,
   'notification-add': NotificationAdd,
   notification: Notification,
+  'page-info': PageInfo,
   publish: Publish,
   redeem: Redeem,
   refresh: Refresh,
