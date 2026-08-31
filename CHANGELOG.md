@@ -1,3 +1,13 @@
+## 0.0.21 (2026-08-31)
+
+### 🚀 Features
+
+- add icon for filter/sort combo
+
+### ❤️ Thank You
+
+- Matt Lippelman
+
 ## 0.0.20 (2026-08-29)
 
 ### 🚀 Features
